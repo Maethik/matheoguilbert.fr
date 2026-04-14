@@ -1,17 +1,19 @@
 @import "tailwindcss";
 
+@theme {
+  --color-brand-brown: #2C1E16;
+  --color-brand-beige: #F5F4F0;
+  
+  --font-sans: var(--font-inter); 
+  --font-serif: var(--font-playfair);
+}
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-inter); 
-  --font-serif: var(--font-playfair);
+body {
+  background-color: var(--background);
+  color: var(--foreground);
 }
-
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
