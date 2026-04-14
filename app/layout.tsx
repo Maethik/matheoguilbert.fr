@@ -3,7 +3,7 @@ import { Playfair_Display, Inter } from "next/font/google";
 import "./globals.css";
 
 const playfairDisplay = Playfair_Display({
-  variable: "--font-playfai-display",
+  variable: "--font-playfair",
   subsets: ["latin"],
 });
 
