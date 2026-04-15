@@ -2,7 +2,7 @@ import { FiFacebook, FiInstagram, FiLinkedin, FiGithub } from "react-icons/fi";
 
 export default function Footer() {
     return (
-        <div className="w-full bg-brand-brown rounded-[10px] flex flex-col items-center justify-center py-15 text-brand-beige gap-6">
+        <footer className="w-[calc(100vw - 11px*2)] bg-brand-brown rounded-t-[10px] mx-2.75 flex flex-col items-center justify-center py-15 text-brand-beige gap-6">
             {/* Logo */}
             <img src="/icons/logo.svg" alt="logo mg dev mb-4" />
 
@@ -33,6 +33,6 @@ export default function Footer() {
             </div>
 
             <p className="text-brand-beige/70 font-sans text-sm">© 2026 M. Guilbert. Tous droits réservés.</p>
-        </div>
+        </footer>
     );
 }
