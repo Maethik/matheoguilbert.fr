@@ -4,31 +4,31 @@ import "./globals.css";
 import Header from "@/components/layout/Header";
 
 const playfairDisplay = Playfair_Display({
-  variable: "--font-playfair",
-  subsets: ["latin"],
+	variable: "--font-playfair",
+	subsets: ["latin"],
 });
 
 const inter = Inter({
-  variable: "--font-inter",
-  subsets: ["latin"],
+	variable: "--font-inter",
+	subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
-  title: "Mathéo Guilbert - Développeur Full Stack",
-  description: "Portfolio de Mathéo Guilbert, développeur web freelance.",
+	title: "Mathéo Guilbert - Développeur Full Stack",
+	description: "Portfolio de Mathéo Guilbert, développeur web freelance.",
 };
 
 export default function RootLayout({
-  children,
+	children,
 }: Readonly<{
-  children: React.ReactNode;
+	children: React.ReactNode;
 }>) {
-  return (
-    <html lang="fr" className={`${playfairDisplay.variable} ${inter.variable} bg-brand-beige m-[11px] antialiased`}>
-      <body className="min-h-screen flex flex-col bg-brand-beige text-brand-brown">
-        <Header />
-        {children}
-      </body>
-    </html>
-  );
+	return (
+		<html lang="fr" className={`${playfairDisplay.variable} ${inter.variable} bg-brand-beige m-[11px] antialiased`}>
+			<body className="min-h-screen flex flex-col bg-brand-beige text-brand-brown">
+				<Header />
+				{children}
+			</body>
+		</html>
+	);
 }
