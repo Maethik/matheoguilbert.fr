@@ -24,7 +24,7 @@ export default function TimelineSection() {
     const progressWidth = "95%";
 
     return (
-        <section className="bg-[#f5f5f3]">
+        <section className="bg-[#f5f5f3] mb-60">
             <div className="mx-auto w-[90vw] px-6">
                 <h2 className="mb-20 text-center font-serif text-6xl leading-none text-brand-brown">A propos de moi</h2>
 

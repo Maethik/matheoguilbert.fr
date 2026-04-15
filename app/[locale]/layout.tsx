@@ -4,6 +4,7 @@ import { Playfair_Display, Inter } from "next/font/google";
 import "./globals.css";
 
 import Header from "@/components/layout/Header";
+import Footer from "@/components/layout/Footer";
 import CustomScrollArea from "@/components/layout/CustomScrollArea";
 
 const playfairDisplay = Playfair_Display({
@@ -40,8 +41,9 @@ export default function RootLayout({
 					<main className="px-2.75 pb-2.75">
 						{children}
 					</main>
+					
+					<Footer />
 				</CustomScrollArea>
-
 			</body>
 		</html>
 	);
