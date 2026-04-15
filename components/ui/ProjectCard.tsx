@@ -22,16 +22,16 @@ export const ProjectCard = ({
     isTheLast = false 
 }: props) => {
     return (
-        <div className="w-full">
+        <div className="w-full pb-12">
             {/* Top separator */}
             <div className="w-full h-px bg-brand-brown/20" />
 
             {/* *** Content *** */}
-            <div className="flex flex-row justify-between items-center gap-14 relative">
-                <div className="absolute top-1 right-1 text-5xl font-serif text-brand-brown/40 font-semibold">{projectDate}</div>
+            <div className="flex flex-col gap-4 lg:flex-row lg:justify-between lg:items-center lg:gap-14 relative">
+                <div className="text-5xl font-serif text-brand-brown/40 mt-6 font-semibold lg:absolute lg:top-1 lg:right-1 ">{projectDate}</div>
                 
                 {/* Left image/video */}
-                <div className="w-3/5 h-92.5 bg-gray-600"></div>
+                <div className="w-full lg:w-3/5 h-92.5 bg-gray-600"></div>
             
                 {/* Texts */}
                 <div className="flex flex-col items-start justify-center w-full gap-7.5">
@@ -57,7 +57,7 @@ export const ProjectCard = ({
             </div>
             
             {/* Bottom separator */}
-            {isTheLast && <div className="w-full h-px bg-brand-brown/20" />}
+            {isTheLast && <div className="w-full h-px mt-12 bg-brand-brown/20" />}
         </div>
     );
 };
