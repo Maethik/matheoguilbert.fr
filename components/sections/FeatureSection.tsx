@@ -2,7 +2,7 @@ import { FeatureColumn } from '@/components/ui/FeatureColumn';
 
 export default function FeatureSection() {
     return (
-        <div className="w-full h-180 flex flex-row justify-center items-center">
+        <section className="w-full h-180 flex flex-row justify-center items-center">
             <FeatureColumn 
                 imagePath={"/icons/brain.svg"} 
                 title={"Plus qu'un simple exécutant"} 
@@ -18,6 +18,6 @@ export default function FeatureSection() {
                 title={"L'utilisateur au centre"} 
                 text={"Le code parfait n'est rien si le produit ne répond pas à un besoin. Je place l'expérience utilisateur et la fonctionnalité au cœur de mes développements."} 
             />
-        </div>
+        </section>
     );
 }

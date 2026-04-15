@@ -2,7 +2,7 @@ import { ProjectCard } from "../ui/ProjectCard";
 
 export default function WorksSection() {
     return (
-        <div className="w-full flex flex-col items-start justify-start">
+        <section className="w-full flex flex-col items-start justify-start">
             <h2 className="text-9xl font-serif text-brand-brown">Travaux</h2>
 
             <ProjectCard 
@@ -42,6 +42,6 @@ export default function WorksSection() {
                 projectPageLink={""} 
                 isTheLast={true}
             />
-        </div>
+        </section>
     );
 }
