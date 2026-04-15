@@ -24,7 +24,7 @@ export default function RootLayout({
 	children: React.ReactNode;
 }>) {
 	return (
-		<html lang="fr" className={`${playfairDisplay.variable} ${inter.variable} bg-brand-beige m-[11px] antialiased`}>
+		<html lang="fr" className={`${playfairDisplay.variable} ${inter.variable} bg-brand-beige m-2.75 overflow-auto antialiased`}>
 			<body className="min-h-screen flex flex-col bg-brand-beige text-brand-brown">
 				<Header />
 				{children}
