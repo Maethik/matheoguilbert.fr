@@ -1,6 +1,7 @@
 import HeroSection from "@/components/sections/HeroSection";
 import WorksSection from "@/components/sections/WorksSection";
 import FeatureSection from "@/components/sections/FeatureSection";
+import TimelineSection from "@/components/sections/TimelineSection";
 
 export default function Home() {
 	return (
@@ -8,6 +9,7 @@ export default function Home() {
 			<HeroSection />
 			<WorksSection />
 			<FeatureSection />
+			<TimelineSection />
 		</main>
 	);
 }
