@@ -24,36 +24,75 @@ export default function TimelineSection() {
     const progressWidth = "95%";
 
     return (
-        <section className="bg-[#f5f5f3] mb-60">
-            <div className="mx-auto w-[90vw] px-6">
-                <h2 className="mb-20 text-center font-serif text-6xl leading-none text-brand-brown">A propos de moi</h2>
+        <section className="bg-[#f5f5f3] py-20 md:py-32">
+            <div className="mx-auto w-full px-6 md:w-[90vw]">
+                <h2 className="mb-16 text-center font-serif text-4xl leading-none text-brand-brown md:mb-24 md:text-6xl">
+                    A propos de moi
+                </h2>
 
-                <div className="relative mx-auto h-80 w-full">
-                    {/* Base line */}
-                    <div className="absolute left-0 right-0 h-1.5 rounded-full bg-[#d9dde2]" style={{ top: lineTop }} />
+                <div className="relative mx-auto w-full md:h-[420px]">
+                    {/* Mobile layout */}
+                    <div className="flex flex-col gap-6 md:hidden">
+                        {steps.map((step, index) => (
+                            <div
+                                key={index}
+                                className="rounded-md border border-gray-300 border-l-4 border-l-brand-brown bg-white p-5"
+                            >
+                                <h3 className="mb-3 font-serif text-2xl text-brand-brown">
+                                    {step.title}
+                                </h3>
+                                <p className="leading-7 text-[#364153]">
+                                    {step.text}
+                                </p>
+                            </div>
+                        ))}
+                    </div>
 
-                    {/* Brown progress */}
-                    <div className="absolute left-0 h-1.5 rounded-full bg-brand-brown" style={{ top: lineTop, width: progressWidth }} />
-
-                    {steps.map((step, index) => (
+                    {/* Desktop timeline */}
+                    <div className="hidden md:block">
+                        {/* Base line */}
                         <div
-                            key={index}
-                            className="absolute -translate-x-1/2 "
-                            style={{ left: step.left, top: lineTop }}
-                        >
-                            {/* Point */}
-                            <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/3">
-                                <div className="h-5 w-5 rounded-full border-2 border-white bg-brand-brown shadow-[0_0_0_2px_#3a2318]" />
-                            </div>
+                            className="absolute left-0 right-0 h-1.5 rounded-full bg-[#d9dde2]"
+                            style={{ top: lineTop }}
+                        />
 
-                            {/* Content */}
-                            <div className={`absolute left-1/2 w-55 -translate-x-1/2 text-center ${step.position === "top" ? "bottom-8" : "top-8"}`}>
-                                <h3 className="mb-2 font-serif text-3xl text-brand-brown">{step.title}</h3>
+                        {/* Brown progress */}
+                        <div
+                            className="absolute left-0 h-1.5 rounded-full bg-brand-brown"
+                            style={{ top: lineTop, width: progressWidth }}
+                        />
 
-                                <p className="text-normal leading-7 text-[#364153]">{step.text}</p>
+                        {steps.map((step, index) => (
+                            <div
+                                key={index}
+                                className="absolute -translate-x-1/2"
+                                style={{ left: step.left, top: lineTop }}
+                            >
+                                {/* Point */}
+                                <div className="absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2">
+                                    <div className="h-5 w-5 rounded-full border-2 border-white bg-brand-brown shadow-[0_0_0_2px_#3a2318]" />
+                                </div>
+
+                                {/* Card */}
+                                <div
+                                    className={[
+                                        "absolute left-1/2 w-[280px] -translate-x-1/2 rounded-md border border-gray-300 border-l-4 border-l-brand-brown bg-white p-5 text-center shadow-sm",
+                                        step.position === "top"
+                                            ? "bottom-10"
+                                            : "top-10",
+                                    ].join(" ")}
+                                >
+                                    <h3 className="mb-3 font-serif text-3xl text-brand-brown">
+                                        {step.title}
+                                    </h3>
+
+                                    <p className="leading-7 text-[#364153]">
+                                        {step.text}
+                                    </p>
+                                </div>
                             </div>
-                        </div>
-                    ))}
+                        ))}
+                    </div>
                 </div>
             </div>
         </section>
