@@ -56,9 +56,6 @@ export const ProjectCard = ({
                 </div>
             </div>
             
-
-
-            
             {/* Bottom separator */}
             {isTheLast && <div className="w-full h-px bg-brand-brown/20" />}
         </div>
