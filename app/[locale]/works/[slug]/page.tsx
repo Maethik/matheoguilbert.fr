@@ -40,7 +40,7 @@ export default async function ProjectPage({ params }: props) {
 
     return (
         <main className="bg-[#f5f3ef]">
-            <div className="mx-auto max-w-full ">
+            <div className="mx-auto max-w-full flex flex-col items-center">
                 <ProjectHero
                     locale={locale}
                     title={project.title}
@@ -48,26 +48,32 @@ export default async function ProjectPage({ params }: props) {
                     dateLabel={project.dateLabel}
                 />
 
-                <ProjectMeta
-                    dateLabel={project.dateLabel}
-                    category={project.category}
-                    roles={project.roles}
-                    client={project.client}
-                />
+                <div className="lg:max-w-[70vw]">
+                    <ProjectMeta
+                        dateLabel={project.dateLabel}
+                        category={project.category}
+                        roles={project.roles}
+                        client={project.client}
+                    />
 
-                <ProjectTechnologies technologies={project.technologies} />
+                    <ProjectTechnologies technologies={project.technologies} />
 
-                <section className="pb-16">
-                    <article className="
-                        prose prose-neutral max-w-none
-                        prose-h2:text-6xl prose-h2:font-semibold prose-h2:text-[#2b160f]
-                        prose-p:text-base prose-p:leading-8 prose-p:text-neutral-800
-                    ">
-                        <MDXRemote source={project.content} components={mdxComponents} />
-                    </article>
-                </section>
+                    <section className="pb-16">
+                        <article className="
+                            flex flex-col gap-20
+                            [&>div>h2]:text-[clamp(80px,10vw,128px)] [&>div>h2]:font-serif [&>div>h2]:text-brand-brown
+                        ">
+                            <MDXRemote
+                                source={project.content}
+                                components={mdxComponents}
+                                options={{ blockJS: false, blockDangerousJS: true }}
+                            />
+                        </article>
+                    </section>
 
-                <OtherProjects locale={locale} projects={otherProjects} />
+                    <OtherProjects locale={locale} projects={otherProjects} />
+                </div>
+
             </div>
         </main>
     );

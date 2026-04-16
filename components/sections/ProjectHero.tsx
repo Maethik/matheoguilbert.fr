@@ -11,7 +11,7 @@ type props = {
 
 export function ProjectHero({ title, description, dateLabel, locale }: props) {
     return (
-        <div className="md:pt-22">
+        <div className="md:pt-22 w-full">
             <section className="rounded-[10px] bg-brand-brown flex flex-col items-center justify-center  text-brand-beige px-6 py-4">
                 <Link
                     href={`/${locale}#works`}
