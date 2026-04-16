@@ -2,7 +2,7 @@ import { ProjectCard } from "../ui/ProjectCard";
 
 export default function WorksSection() {
     return (
-        <section className="w-full flex flex-col items-start justify-start">
+        <section id="works" className="w-full flex flex-col items-start justify-start">
             <h2 className="text-[clamp(80px,10vw,128px)] font-serif text-brand-brown mt-6 mb-4">Travaux</h2>
 
             <ProjectCard 

@@ -1,7 +1,7 @@
 import HeroSection from "@/components/sections/HeroSection";
 import WorksSection from "@/components/sections/WorksSection";
 import FeatureSection from "@/components/sections/FeatureSection";
-import TimelineSection from "@/components/sections/TimelineSection";
+import TimelineSection from "@/components/sections/AboutSection";
 
 export default function Home() {
 	return (

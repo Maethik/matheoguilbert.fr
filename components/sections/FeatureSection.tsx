@@ -2,7 +2,7 @@ import { FeatureColumn } from '@/components/ui/FeatureColumn';
 
 export default function FeatureSection() {
     return (
-        <section className="w-full flex flex-wrap justify-around items-center gap-16 mt-30 lg:mt-40 mb-40">
+        <section className="w-full flex flex-wrap justify-around items-center gap-16 mt-30 lg:mt-40 mb-20">
             <FeatureColumn 
                 imagePath={"/icons/brain.svg"} 
                 title={"Plus qu'un simple exécutant"} 

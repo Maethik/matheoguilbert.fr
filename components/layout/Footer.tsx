@@ -6,7 +6,7 @@ export default function Footer() {
             {/* Logo */}
             <img src="/icons/logo.svg" alt="logo mg dev mb-4" />
 
-            <div className="flex flex-row justify-center items-start gap-16">
+            <div className="flex flex-col lg:flex-row justify-center items-start gap-16">
                 <div className="flex flex-col items-start justify-start gap-4">
                     <h3 className="font-serif text-3xl">Mathéo Guilbert EI</h3>
                     <p className="font-sans text-base">Développeur Full Stack & Architecte Web</p>
