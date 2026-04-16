@@ -5,7 +5,8 @@ type props = {
     projects: {
         slug: string;
         title: string;
-        subtitle: string;
+        description: string;
+        cover: string;
     }[];
 };
 
@@ -14,7 +15,7 @@ export function OtherProjects({ locale, projects }: props) {
 
     return (
         <section className="pb-20 pt-8">
-            <h2 className="mb-10 text-center text-5xl font-semibold">
+            <h2 className="mb-10 text-center text-[clamp(80px,10vw,128px)] font-serif text-brand-brown">
                 Autres projets
             </h2>
 
@@ -25,13 +26,9 @@ export function OtherProjects({ locale, projects }: props) {
                         href={`/${locale}/works/${project.slug}`}
                         className="group block"
                     >
-                        <div className="mb-3 text-2xl font-medium">{project.title}</div>
-
-                        <div className="flex min-h-[220px] items-center justify-center rounded-[22px] bg-white text-4xl shadow-sm transition group-hover:-translate-y-1">
-                            {project.title}
-                        </div>
-
-                        <p className="mt-3 text-sm text-neutral-500">{project.subtitle}</p>
+                        <div className="mb-3 text-3xl font-sans">{project.title}</div>
+                        <p className="mb-3 text-sm text-neutral-500">{project.description}</p>
+                        <img className="flex min-h-[220px] items-center justify-center rounded-[22px] bg-white text-4xl shadow-sm transition group-hover:-translate-y-1" src={project.cover} alt="cover image" />
                     </Link>
                 ))}
             </div>

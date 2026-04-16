@@ -1,4 +1,5 @@
 export type ProjectFrontmatter = {
+    ready: boolean;
     title: string;
     priority: number;
     category: string;
@@ -7,7 +8,7 @@ export type ProjectFrontmatter = {
     technologies: string[];
     preview1?: string;
     preview2?: string;
-    website: string;
+    website?: string;
     featured: boolean;
     description: string;
     dateLabel: string;

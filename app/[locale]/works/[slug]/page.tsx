@@ -30,12 +30,13 @@ export default async function ProjectPage({ params }: props) {
     }
 
     const otherProjects = getAllProjects()
-        .filter((item: any) => item.slug !== slug)
+        .filter((item: any) => item.slug !== slug && item.ready)
         .slice(0, 2)
         .map((item: any) => ({
             slug: item.slug,
             title: item.title,
-            subtitle: item.subtitle,
+            description: item.description,
+            cover: item.cover
         }));
 
     return (

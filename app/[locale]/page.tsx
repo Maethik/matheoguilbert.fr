@@ -13,7 +13,7 @@ type props = {
 
 export default async function Home({ params }: props) {
 	const { locale } = await params;
-	const projects = getAllProjects();
+	const projects = getAllProjects().filter((item) => item.ready);
 
 	return (
 		<main className=" bg-brand-beige text-brand-black flex flex-col items-center justify-center">
