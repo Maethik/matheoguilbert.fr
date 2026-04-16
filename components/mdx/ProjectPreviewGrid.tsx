@@ -13,7 +13,7 @@ export function ProjectPreviewGrid({ items = [] }: props) {
 			{items.map((item) => (
 				<div
 					key={item.title}
-					className="rounded-[10px] overflow-hidden bg-[#2b160f] text-white min-h-65 flex items-center justify-center"
+					className="rounded-[10px] overflow-hidden bg-brand-brown text-white min-h-65 flex items-center justify-center"
 				>
 					{item.image ? (
 						<img

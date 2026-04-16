@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 import React, { useState, useEffect, MouseEvent } from 'react';
 import { CiMenuFries } from "react-icons/ci";
 import { IoCloseOutline } from "react-icons/io5";
@@ -40,8 +41,10 @@ export default function Header() {
 	return (
 		<div className="bg-brand-beige h-20 fixed left-2.75 right-2.75 z-50 rounded-b-[20px]">
 			<header className="h-20 bg-brand-brown text-brand-beige py-6 px-10 flex justify-between items-center rounded-[10px]">
-				<div className="hidden md:block font-serif text-2xl font-light">M. Guilbert</div>
-				<img className="block md:hidden w-auto h-15" src="/icons/logo.svg" alt="logo mg dev" />
+				<Link href="/#">
+					<div className="hidden md:block font-serif text-2xl font-light cursor-pointer">M. Guilbert</div>
+					<img className="block md:hidden w-auto h-15 cursor-pointer" src="/icons/logo.svg" alt="logo mg dev" />
+				</Link>
 
 				{/* Desktop */}
 				<nav className="hidden sm:block">
