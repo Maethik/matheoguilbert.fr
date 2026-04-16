@@ -3,7 +3,7 @@ import { ProjectPreviewGrid } from "@/components/mdx/ProjectPreviewGrid";
 import { ProjectVisitButton } from "@/components/mdx/ProjectVisitButton";
 
 export const mdxComponents = {
-  ProjectsColumns: ProjectsColumns,
-  ProjectPreviewGrid,
-  ProjectVisitButton,
+	ProjectsColumns: ProjectsColumns,
+	ProjectPreviewGrid,
+	ProjectVisitButton,
 };

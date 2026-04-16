@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-type Props = {
+type props = {
     locale: string;
     projects: {
         slug: string;
@@ -9,7 +9,7 @@ type Props = {
     }[];
 };
 
-export function OtherProjects({ locale, projects }: Props) {
+export function OtherProjects({ locale, projects }: props) {
     if (!projects.length) return null;
 
     return (

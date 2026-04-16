@@ -2,30 +2,29 @@ import Link from "next/link";
 import { GoArrowRight } from "react-icons/go";
 import { Project } from "@/lib/projects/types";
 
-type Props = {
+type props = {
     project: Project;
     locale: string;
     isTheLast?: boolean;
 };
 
-export const ProjectCard = ({
-    project,
-    locale,
-    isTheLast = false,
-}: Props) => {
+export const ProjectCard = ({ project, locale, isTheLast = false }: props) => {
+
     return (
         <div className="w-full pb-12">
             <div className="w-full h-px bg-brand-brown/20" />
 
             <Link href={`/${locale}/works/${project.slug}`} className="group block">
                 <div className="flex flex-col gap-4 lg:flex-row lg:justify-between lg:items-center lg:gap-14 relative">
+
+                    {/* Date label */}
                     <div className="text-5xl font-serif text-brand-brown/40 mt-6 font-semibold lg:absolute lg:top-1 lg:right-1">
-                        {project.dateLabel ?? project.year}
+                        {project.dateLabel}
                     </div>
 
+                    {/* Left image */}
                     <div className="w-full lg:w-3/5 h-92.5 bg-gray-600 overflow-hidden">
                         {project.preview1 ? (
-                            // eslint-disable-next-line @next/next/no-img-element
                             <img
                                 src={project.preview1}
                                 alt={project.title}
@@ -34,6 +33,7 @@ export const ProjectCard = ({
                         ) : null}
                     </div>
 
+                    {/* Right content */}
                     <div className="flex flex-col items-start justify-center w-full gap-7.5">
                         <div className="flex flex-col items-start justify-center w-full">
                             <div className="p-1.5 bg-brand-brown rounded-px text-brand-beige font-sans">{project.category}</div>
@@ -47,7 +47,7 @@ export const ProjectCard = ({
                             </div>
                         </div>
 
-                        <div className="text-base font-normal font-sans">{project.description ?? project.subtitle}</div>
+                        <div className="text-base font-normal font-sans">{project.description}</div>
 
                         <div className="border-b text-base flex flex-row justify-center items-center gap-0.5 transition group-hover:gap-1.5">
                             <p>READ</p>

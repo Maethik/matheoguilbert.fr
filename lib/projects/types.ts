@@ -1,7 +1,6 @@
 export type ProjectFrontmatter = {
     title: string;
-    subtitle: string;
-    year: number;
+    priority: number;
     category: string;
     client: string;
     roles: string[];

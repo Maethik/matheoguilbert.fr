@@ -1,8 +1,8 @@
-type Props = {
+type props = {
     technologies: string[];
 };
 
-export function ProjectTechnologies({ technologies }: Props) {
+export function ProjectTechnologies({ technologies }: props) {
     return (
         <section className="pb-16">
             <p className="mb-4 text-sm text-neutral-500">Technologies</p>
@@ -11,7 +11,7 @@ export function ProjectTechnologies({ technologies }: Props) {
                 {technologies.map((tech) => (
                     <span
                         key={tech}
-                        className="rounded-full bg-[#2b160f] px-4 py-2 text-sm text-white"
+                        className="rounded-full bg-brand-brown px-4 py-2 text-sm text-white"
                     >
                         {tech}
                     </span>

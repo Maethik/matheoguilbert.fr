@@ -38,5 +38,5 @@ export function getAllProjects(): Project[] {
     return getProjectSlugs()
         .map((slug) => getProjectBySlug(slug))
         .filter((project): project is Project => project !== null)
-        .sort((a, b) => b.year - a.year);
+        .sort((a, b) => b.priority - a.priority);
 }

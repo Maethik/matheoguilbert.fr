@@ -1,5 +1,5 @@
-type Props = {
-    year: number;
+type props = {
+    dateLabel: string;
     category: string;
     roles: string[];
     client: string;
@@ -20,10 +20,10 @@ function Item({
     );
 }
 
-export function ProjectMeta({ year, category, roles, client }: Props) {
+export function ProjectMeta({ dateLabel, category, roles, client }: props) {
     return (
         <section className="grid gap-8 py-10 md:grid-cols-4">
-            <Item label="Année">{year}</Item>
+            <Item label="Année">{dateLabel}</Item>
             <Item label="Catégorie">{category}</Item>
             <Item label="Rôles">
                 <div className="flex flex-col gap-1">

@@ -5,13 +5,13 @@ import TimelineSection from "@/components/sections/AboutSection";
 
 import { getAllProjects } from "@/lib/projects/get-projects";
 
-type Props = {
+type props = {
 	params: Promise<{
 		locale: string;
 	}>;
 };
 
-export default async function Home({ params }: Props) {
+export default async function Home({ params }: props) {
 	const { locale } = await params;
 	const projects = getAllProjects();
 
