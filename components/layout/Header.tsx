@@ -98,10 +98,10 @@ export default function Header() {
 									key={index}
 									onClick={(e) => handleAnchorClick(e, link.target)}
 									className={`
-                    cursor-pointer text-brand-beige font-serif text-[clamp(2.4rem,9vw,5rem)] leading-[0.95]
-                    transition-all duration-700 ease-out
-                    ${showText ? "translate-x-0 opacity-100" : "-translate-x-12 opacity-0"}
-                  `}
+										cursor-pointer text-brand-beige font-serif text-[clamp(2.4rem,9vw,5rem)] leading-[0.95]
+										transition-all duration-700 ease-out
+										${showText ? "translate-x-0 opacity-100" : "-translate-x-12 opacity-0"}
+									`}
 									style={{
 										transitionDelay: showText ? `${index * 140}ms` : "0ms",
 									}}

@@ -9,7 +9,7 @@ export default function HeroSection() {
             ">
                 {/* Rotating texts */}
                 <div className="flex flex-col">
-                    <p className="text-2xl font-sans">Ensemble nous allons...</p>
+                    <p className="text-[clamp(15px,2vw,24px)] font-sans">Ensemble nous allons...</p>
                     <h1 className="text-[clamp(30px,4vw,64px)] font-serif">Construire une solution qui répond à votre problème.</h1>
                 </div>
 
