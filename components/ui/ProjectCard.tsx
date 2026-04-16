@@ -11,10 +11,10 @@ type props = {
 export const ProjectCard = ({ project, locale, isTheLast = false }: props) => {
 
     return (
-        <div className="w-full pb-12">
-            <div className="w-full h-px bg-brand-brown/20" />
+        <div className="w-full pb-8">
+            <div className="w-full h-px bg-brand-brown/20 mb-8" />
 
-            <Link href={`/${locale}/works/${project.slug}`} className="group block">
+            <Link href={`/${locale}/works/${project.slug}`} className="group block pointer-cursor">
                 <div className="flex flex-col gap-4 lg:flex-row lg:justify-between lg:items-center lg:gap-14 relative">
 
                     {/* Date label */}
@@ -23,14 +23,12 @@ export const ProjectCard = ({ project, locale, isTheLast = false }: props) => {
                     </div>
 
                     {/* Left image */}
-                    <div className="w-full lg:w-3/5 h-92.5 bg-gray-600 overflow-hidden">
-                        {project.preview1 ? (
-                            <img
-                                src={project.preview1}
-                                alt={project.title}
-                                className="w-full h-full object-cover transition duration-500 group-hover:scale-[1.02]"
-                            />
-                        ) : null}
+                    <div className="w-full rounded-[10px] lg:w-3/5 h-92.5 bg-gray-600 overflow-hidden">
+                        <img
+                            src={project.cover}
+                            alt={project.title}
+                            className="w-full h-full object-cover transition duration-500 group-hover:scale-[1.02]"
+                        />
                     </div>
 
                     {/* Right content */}
@@ -57,7 +55,7 @@ export const ProjectCard = ({ project, locale, isTheLast = false }: props) => {
                 </div>
             </Link>
 
-            {isTheLast && <div className="w-full h-px mt-12 bg-brand-brown/20" />}
+            {isTheLast && <div className="w-full h-px mt-8 bg-brand-brown/20" />}
         </div>
     );
 };

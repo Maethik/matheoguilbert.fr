@@ -6,6 +6,7 @@ export type ProjectFrontmatter = {
     client: string;
     roles: string[];
     technologies: string[];
+    cover?: string;
     preview1?: string;
     preview2?: string;
     website?: string;

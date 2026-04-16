@@ -5,6 +5,9 @@ type VisitButtonProps = {
 };
 
 export function ProjectVisitButton({ href }: VisitButtonProps) {
+
+	if (href === "" || href === null) { return; }
+	
 	return (
 		<div className="flex justify-center">
 			<a

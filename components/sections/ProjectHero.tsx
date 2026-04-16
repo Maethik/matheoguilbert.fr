@@ -21,7 +21,7 @@ export function ProjectHero({ title, description, dateLabel, locale }: props) {
                 </Link>
 
                 <div className="mx-auto flex min-h-90 max-w-4xl flex-col items-center justify-center text-center">
-                    <h1 className="text-5xl font-serif md:text-7xl">{title}</h1>
+                    <h1 className="text-[clamp(30px,4vw,64px)] font-serif">{title}</h1>
                     <p className="mt-4 font-sans text-base text-brand-beige/80">{description}</p>
 
                     <div className="mt-8 flex items-center gap-4 text-sm text-brand-beige/70">
