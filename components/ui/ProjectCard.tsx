@@ -1,62 +1,62 @@
+import Link from "next/link";
 import { GoArrowRight } from "react-icons/go";
+import { Project } from "@/lib/projects/types";
 
-type props = {
-    projectVideoPath    : String;
-    projectName         : String;
-    projectType         : String;
-    projectDate         : String;
-    roles               : String[];
-    projectDescription  : String;
-    projectPageLink     : String;
-    isTheLast?          : boolean;
+type Props = {
+    project: Project;
+    locale: string;
+    isTheLast?: boolean;
 };
 
-export const ProjectCard = ({ 
-    projectVideoPath,
-    projectName, 
-    projectType, 
-    projectDate, 
-    roles, 
-    projectDescription, 
-    projectPageLink, 
-    isTheLast = false 
-}: props) => {
+export const ProjectCard = ({
+    project,
+    locale,
+    isTheLast = false,
+}: Props) => {
     return (
         <div className="w-full pb-12">
-            {/* Top separator */}
             <div className="w-full h-px bg-brand-brown/20" />
 
-            {/* *** Content *** */}
-            <div className="flex flex-col gap-4 lg:flex-row lg:justify-between lg:items-center lg:gap-14 relative">
-                <div className="text-5xl font-serif text-brand-brown/40 mt-6 font-semibold lg:absolute lg:top-1 lg:right-1 ">{projectDate}</div>
-                
-                {/* Left image/video */}
-                <div className="w-full lg:w-3/5 h-92.5 bg-gray-600"></div>
-            
-                {/* Texts */}
-                <div className="flex flex-col items-start justify-center w-full gap-7.5">
-                    <div className="flex flex-col items-start justify-center w-full">
-                        <div className="p-1.5 bg-brand-brown rounded-px text-brand-beige font-sans">{projectType}</div>
-                        <div className="text-5xl text-brand-brown font-serif uppercase">{projectName}</div>
-                        <div className="text-2xl  font-serif font-light">
-                            <p>(
-                                {roles.map((role, index) => (
-                                    role + (index < roles.length - 1 ? ", " : "")
-                                ))}
-                            )</p>
+            <Link href={`/${locale}/works/${project.slug}`} className="group block">
+                <div className="flex flex-col gap-4 lg:flex-row lg:justify-between lg:items-center lg:gap-14 relative">
+                    <div className="text-5xl font-serif text-brand-brown/40 mt-6 font-semibold lg:absolute lg:top-1 lg:right-1">
+                        {project.dateLabel ?? project.year}
+                    </div>
+
+                    <div className="w-full lg:w-3/5 h-92.5 bg-gray-600 overflow-hidden">
+                        {project.preview1 ? (
+                            // eslint-disable-next-line @next/next/no-img-element
+                            <img
+                                src={project.preview1}
+                                alt={project.title}
+                                className="w-full h-full object-cover transition duration-500 group-hover:scale-[1.02]"
+                            />
+                        ) : null}
+                    </div>
+
+                    <div className="flex flex-col items-start justify-center w-full gap-7.5">
+                        <div className="flex flex-col items-start justify-center w-full">
+                            <div className="p-1.5 bg-brand-brown rounded-px text-brand-beige font-sans">{project.category}</div>
+                            <div className="text-5xl text-brand-brown font-serif uppercase">{project.title}</div>
+                            <div className="text-2xl font-serif font-light">
+                                <p>
+                                    (
+                                    {project.roles.map((role, index) => role + (index < project.roles.length - 1 ? ", " : ""))}
+                                    )
+                                </p>
+                            </div>
+                        </div>
+
+                        <div className="text-base font-normal font-sans">{project.description ?? project.subtitle}</div>
+
+                        <div className="border-b text-base flex flex-row justify-center items-center gap-0.5 transition group-hover:gap-1.5">
+                            <p>READ</p>
+                            <GoArrowRight />
                         </div>
                     </div>
-
-                    <div className="text-base font-normal font-sans">{projectDescription}</div>
-
-                    <div className="border-b text-base flex flex-row justify-center items-center gap-0.5">
-                        <p>READ</p>
-                        <GoArrowRight />
-                    </div>
                 </div>
-            </div>
-            
-            {/* Bottom separator */}
+            </Link>
+
             {isTheLast && <div className="w-full h-px mt-12 bg-brand-brown/20" />}
         </div>
     );
