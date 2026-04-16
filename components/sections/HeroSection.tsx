@@ -5,7 +5,7 @@ export default function HeroSection() {
 		<section className="w-full h-[calc(100vh-(2*11px))] rounded-[10px] bg-brand-brown text-brand-beige flex flex-col items-center justify-center relative">
             {/* Title + image container */}
             <div className="flex flex-col w-9/10 gap-2.5
-                lg:flex-row lg:justify-between lg:items-center lg:w-2/3
+                md:flex-row md:justify-between md:items-center md:w-2/3
             ">
                 {/* Rotating texts */}
                 <div className="flex flex-col">
@@ -14,7 +14,7 @@ export default function HeroSection() {
                 </div>
 
                 {/* Image */}
-                <img className="rounded-[10px] w-full h-[clamp(300px,50vh,700px)] object-cover" src="/images/pofile.png" alt="Image of me" />
+                <img className="rounded-[10px] w-full object-cover h-[clamp(200px,30vh,500px)]  md:h-[clamp(250px,35vh,600px)] lg:h-[clamp(300px,45vh,700px)]" src="/images/pofile.png" alt="Image of me" />
             </div>
 
             {/* Call to scroll */}
