@@ -68,7 +68,10 @@
         "backToBlog": "Back to blog",
         "scrollPrompt": "Scroll",
         "readArticle": "Read article",
-        "noArticles": "No articles yet."
+        "noArticles": "No articles yet.",
+        "summary": {
+            "label": "Summary"
+        }
     },
     "projectPage": {
         "hero": {

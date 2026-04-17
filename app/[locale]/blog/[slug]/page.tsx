@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import { getArticleBySlug, getArticleSlugs } from "@/lib/blog/get-articles";
 import { ArticleHero } from "@/components/sections/ArticleHero";
+import { ArticleSummary } from "@/components/sections/ArticleSummary";
 import { locales } from "@/middleware";
 
 type props = {
@@ -43,6 +44,9 @@ export default async function ArticlePage({ params }: props) {
                 cover={article.cover}
             />
             <div className="mx-auto max-w-[720px] px-8 md:px-14 lg:px-6 py-20">
+                {article.summary && article.summary.length > 0 && (
+                    <ArticleSummary items={article.summary} />
+                )}
                 {article.tags.length > 0 && (
                     <div className="flex flex-wrap gap-2 mb-14">
                         {article.tags.map((tag) => (

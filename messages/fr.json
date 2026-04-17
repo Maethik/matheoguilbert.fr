@@ -68,7 +68,10 @@
         "backToBlog": "Retour au blog",
         "scrollPrompt": "Défiler",
         "readArticle": "Lire l'article",
-        "noArticles": "Aucun article pour le moment."
+        "noArticles": "Aucun article pour le moment.",
+        "summary": {
+            "label": "En résumé"
+        }
     },
     "projectPage": {
         "hero": {
