@@ -5,6 +5,7 @@ import React, { useState, useEffect, MouseEvent } from "react";
 import { useParams, usePathname } from "next/navigation";
 import { CiMenuFries } from "react-icons/ci";
 import { IoCloseOutline } from "react-icons/io5";
+import { useTranslations } from "next-intl";
 
 import LanguageSwitcher from "../ui/LanguageSwitcher";
 
@@ -12,13 +13,14 @@ export default function Header() {
     const params = useParams<{ locale?: string }>();
     const pathname = usePathname();
     const locale = params?.locale ?? "fr";
+    const t = useTranslations('header');
     const homePath = `/${locale}`;
 
     const links = [
-        { text: "Accueil", target: homePath },
-        { text: "Travaux", target: `${homePath}#works` },
-        { text: "A propos", target: `${homePath}#about` },
-        { text: "Blog", target: `${homePath}/blog` },
+        { text: t('home'), target: homePath },
+        { text: t('works'), target: `${homePath}#works` },
+        { text: t('about'), target: `${homePath}#about` },
+        { text: t('blog'), target: `${homePath}/blog` },
     ];
 
     const [isOpen, setIsOpen] = useState(false);

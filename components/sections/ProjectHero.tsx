@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from 'react';
 import Link from 'next/link';
+import { useTranslations } from "next-intl";
 
 type props = {
     title: string;
@@ -13,6 +14,7 @@ type props = {
 
 export function ProjectHero({ title, description, dateLabel, locale, cover }: props) {
     const ref = useRef<HTMLElement>(null);
+    const t = useTranslations('projectPage.hero');
 
     useEffect(() => {
         const section = ref.current;
@@ -46,7 +48,7 @@ export function ProjectHero({ title, description, dateLabel, locale, cover }: pr
             )}
 
             {/* Back link */}
-            <div className="relative z-10 px-8 md:px-14 lg:px-20 pt-10">
+            <div className="relative z-10 px-8 md:px-14 lg:px-20 pt-30">
                 <div
                     className="hero-reveal"
                     style={{ opacity: 0, transform: 'translateY(20px)', transition: 'opacity 500ms ease, transform 500ms cubic-bezier(0.22,1,0.36,1)' }}
@@ -64,7 +66,7 @@ export function ProjectHero({ title, description, dateLabel, locale, cover }: pr
                         >
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M7 16l-4-4m0 0l4-4m-4 4h18" />
                         </svg>
-                        Retour aux projets
+                        {t('backToProjects')}
                     </Link>
                 </div>
             </div>
@@ -107,7 +109,7 @@ export function ProjectHero({ title, description, dateLabel, locale, cover }: pr
             {/* Scroll indicator */}
             <div className="relative z-10 flex justify-center pb-8 text-brand-beige/30">
                 <div className="flex flex-col items-center gap-1.5">
-                    <span className="font-sans text-[10px] uppercase tracking-[0.15em]">Défiler</span>
+                    <span className="font-sans text-[10px] uppercase tracking-[0.15em]">{t('scrollPrompt')}</span>
                     <svg
                         className="w-4 h-4"
                         style={{ animation: 'arrowBounce 1.8s ease-in-out infinite' }}

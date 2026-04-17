@@ -1,36 +1,38 @@
 'use client';
 
 import { useRef, useEffect, useState } from 'react';
-
-const steps = [
-    {
-        title: 'Les Débuts',
-        text: "J'ai commencé par le web en 2019 suite à un stage, je n'ai plus jamais arrêté. Aujourd'hui je veux en faire mon métier.",
-        year: '2019',
-        position: 'top' as const,
-        left: '16%',
-    },
-    {
-        title: 'L\'Évolution',
-        text: "Après un bac STI2D avec mention Très bien j'ai entamé un BUT Informatique Parcours Développement IA.",
-        year: '2022',
-        position: 'bottom' as const,
-        left: '50%',
-    },
-    {
-        title: 'Aujourd\'hui',
-        text: "Je suis entrepreneur, co-fondateur d'une startup et développeur freelance, je vis de ma passion.",
-        year: '2026',
-        position: 'top' as const,
-        left: '84%',
-    },
-];
-
-const lineTop = '58%';
+import { useTranslations } from "next-intl";
 
 export default function TimelineSection() {
     const sectionRef = useRef<HTMLElement>(null);
     const [visible, setVisible] = useState(false);
+    const t = useTranslations('about');
+    
+    const lineTop = '58%';
+    
+    const steps = [
+        {
+            title: t('step1.title'),
+            text: t('step1.text'),
+            year: '2019',
+            position: 'top' as const,
+            left: '16%',
+        },
+        {
+            title: t('step2.title'),
+            text: t('step2.text'),
+            year: '2022',
+            position: 'bottom' as const,
+            left: '50%',
+        },
+        {
+            title: t('step3.title'),
+            text: t('step3.text'),
+            year: '2026',
+            position: 'top' as const,
+            left: '84%',
+        },
+    ];
 
     useEffect(() => {
         const section = sectionRef.current;
@@ -56,11 +58,11 @@ export default function TimelineSection() {
             {/* Label */}
             <div className="reveal flex items-center gap-3 mb-6">
                 <span className="w-8 h-px bg-brand-brown/40" />
-                <span className="font-sans text-[11px] uppercase tracking-[0.2em] text-brand-brown/45">Parcours</span>
+                <span className="font-sans text-[11px] uppercase tracking-[0.2em] text-brand-brown/45">{t('sectionLabel')}</span>
             </div>
 
             <h2 className="reveal font-serif text-[clamp(48px,7vw,100px)] leading-none text-brand-brown mb-16 md:mb-24">
-                À propos
+                {t('title')}
             </h2>
 
             {/* Mobile layout */}

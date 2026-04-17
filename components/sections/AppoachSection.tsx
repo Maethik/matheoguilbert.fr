@@ -1,28 +1,29 @@
 'use client';
 
 import { useRef, useEffect } from 'react';
-import { FeatureColumn } from '@/components/ui/FeatureColumn';
+import { useTranslations } from "next-intl";
 
-const features = [
-    {
-        imagePath: '/icons/brain.svg',
-        title: 'Plus qu\'un simple exécutant',
-        text: 'Grâce à mon background en conception numérique et mobile, je ne me contente pas de coder. J\'apporte un regard critique et constructif sur l\'ensemble de votre projet.',
-    },
-    {
-        imagePath: '/icons/building.svg',
-        title: 'Des fondations en béton',
-        text: 'Ma spécialité : l\'architecture. Je construis des solutions pérennes, évolutives et capables d\'absorber la croissance de votre produit dans le temps.',
-    },
-    {
-        imagePath: '/icons/people.svg',
-        title: 'L\'utilisateur au centre',
-        text: 'Le code parfait n\'est rien si le produit ne répond pas à un besoin. Je place l\'expérience utilisateur et la fonctionnalité au cœur de mes développements.',
-    },
-];
-
-export default function FeatureSection() {
+export default function ApproachSection() {
     const sectionRef = useRef<HTMLElement>(null);
+    const t = useTranslations('approach');
+    
+    const features = [
+        {
+            imagePath: '/icons/brain.svg',
+            title: t('feature1.title'),
+            text: t('feature1.text'),
+        },
+        {
+            imagePath: '/icons/building.svg',
+            title: t('feature2.title'),
+            text: t('feature2.text'),
+        },
+        {
+            imagePath: '/icons/people.svg',
+            title: t('feature3.title'),
+            text: t('feature3.text'),
+        },
+    ];
 
     useEffect(() => {
         const section = sectionRef.current;
@@ -51,7 +52,7 @@ export default function FeatureSection() {
             {/* Section label */}
             <div className="reveal flex items-center gap-3 mb-12 md:mb-16">
                 <span className="w-8 h-px bg-brand-brown/40" />
-                <span className="font-sans text-[11px] uppercase tracking-[0.2em] text-brand-brown/45">Approche</span>
+                <span className="font-sans text-[11px] uppercase tracking-[0.2em] text-brand-brown/45">{t('sectionLabel')}</span>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-6 lg:gap-16">

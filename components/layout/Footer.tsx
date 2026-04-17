@@ -1,6 +1,9 @@
 import { FiFacebook, FiInstagram, FiLinkedin, FiGithub } from "react-icons/fi";
+import { useTranslations } from "next-intl";
 
 export default function Footer() {
+    const t = useTranslations('footer');
+
     return (
         <footer className="w-[calc(100vw - 11px*2)] bg-brand-brown rounded-t-[10px] mx-2.75 flex flex-col items-center justify-center py-15 text-brand-beige gap-6">
             {/* Logo */}
@@ -9,13 +12,13 @@ export default function Footer() {
             <div className="flex flex-col lg:flex-row justify-center items-start gap-16">
                 <div className="flex flex-col items-start justify-start gap-4">
                     <h3 className="font-serif text-3xl">Mathéo Guilbert EI</h3>
-                    <p className="font-sans text-base">Développeur Full Stack & Architecte Web</p>
+                    <p className="font-sans text-base">{t('me')}</p>
                 </div>
 
                 <div className="flex flex-col items-start justify-start gap-4">
-                    <h3 className="font-serif text-3xl">Légal</h3>
-                    <p className="font-sans text-base">Mentions Légales</p>
-                    <p className="font-sans text-base">Conditions Générales de Vente</p>
+                    <h3 className="font-serif text-3xl">{t('legal.title')}</h3>
+                    <p className="font-sans text-base">{t('legal.legalNotice')}</p>
+                    <p className="font-sans text-base">{t('legal.termsAndConditions')}</p>
                 </div>
                 
                 <div className="flex flex-col items-start justify-start gap-4">
@@ -32,7 +35,7 @@ export default function Footer() {
                 <FiGithub />
             </div>
 
-            <p className="text-brand-beige/70 font-sans text-sm">© 2026 M. Guilbert. Tous droits réservés.</p>
+            <p className="text-brand-beige/70 font-sans text-sm">{t('copyright')}</p>
         </footer>
     );
 }

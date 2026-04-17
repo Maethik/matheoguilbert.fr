@@ -1,6 +1,7 @@
 'use client';
 
 import { useRef, useEffect } from 'react';
+import { useTranslations } from "next-intl";
 
 type props = {
     dateLabel: string;
@@ -24,6 +25,7 @@ function MetaItem({ label, children }: { label: string; children: React.ReactNod
 
 export function ProjectMeta({ dateLabel, category, roles, client }: props) {
     const ref = useRef<HTMLElement>(null);
+    const t = useTranslations('projectPage.meta');
 
     useEffect(() => {
         const el = ref.current;
@@ -47,16 +49,16 @@ export function ProjectMeta({ dateLabel, category, roles, client }: props) {
             <div className="w-full h-px bg-brand-brown/10 mb-10" />
 
             <div className="grid grid-cols-2 gap-8 md:grid-cols-4 md:gap-12">
-                <MetaItem label="Année">{dateLabel}</MetaItem>
-                <MetaItem label="Catégorie">{category}</MetaItem>
-                <MetaItem label="Rôles">
+                <MetaItem label={t('year')}>{dateLabel}</MetaItem>
+                <MetaItem label={t('category')}>{category}</MetaItem>
+                <MetaItem label={t('roles')}>
                     <div className="flex flex-col gap-1">
                         {roles.map((role) => (
                             <span key={role}>{role}</span>
                         ))}
                     </div>
                 </MetaItem>
-                <MetaItem label="Client">{client}</MetaItem>
+                <MetaItem label={t('client')}>{client}</MetaItem>
             </div>
 
             {/* Bottom divider */}

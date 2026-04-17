@@ -1,9 +1,11 @@
 'use client';
 
 import { useEffect, useRef } from 'react';
+import { useTranslations } from "next-intl";
 
 export default function HeroSection() {
     const sectionRef = useRef<HTMLElement>(null);
+    const t = useTranslations('hero');
 
     useEffect(() => {
         const section = sectionRef.current;
@@ -36,7 +38,7 @@ export default function HeroSection() {
                     >
                         <span className="inline-flex items-center gap-2 font-sans text-xs uppercase tracking-[0.2em] text-brand-beige/50">
                             <span className="w-6 h-px bg-brand-beige/30" />
-                            Développeur Full Stack &amp; Architecte Web
+                            {t('sectionLabel')}
                         </span>
                     </div>
 
@@ -46,9 +48,7 @@ export default function HeroSection() {
                         style={{ opacity: 0, transform: 'translateY(28px)', transition: 'opacity 700ms cubic-bezier(0.22,1,0.36,1), transform 700ms cubic-bezier(0.22,1,0.36,1)' }}
                     >
                         <h1 className="font-serif leading-[0.95] text-[clamp(36px,5.5vw,88px)] text-brand-beige">
-                            Ensemble,<br />
-                            <em className="not-italic text-brand-beige/70">construisons</em><br />
-                            ce qui dure.
+                            {t('title')}
                         </h1>
                     </div>
 
@@ -58,8 +58,7 @@ export default function HeroSection() {
                         style={{ opacity: 0, transform: 'translateY(28px)', transition: 'opacity 700ms cubic-bezier(0.22,1,0.36,1), transform 700ms cubic-bezier(0.22,1,0.36,1)' }}
                     >
                         <p className="font-sans text-base font-light text-brand-beige/60 max-w-md leading-relaxed">
-                            Je conçois des architectures robustes, scalables et pérennes —
-                            des fondations qui supportent la croissance de votre produit dans le temps.
+                            {t('subtitle')}
                         </p>
                     </div>
 
@@ -77,7 +76,7 @@ export default function HeroSection() {
                             }}
                         >
                             <span className="relative">
-                                Voir mes travaux
+                                {t('cta')}
                                 <span className="absolute bottom-0 left-0 w-full h-px bg-brand-beige/40 origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300" />
                             </span>
                             <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -135,7 +134,7 @@ export default function HeroSection() {
                         animationDelay: '1s'
                     }}
                 >
-                    <span className="font-sans text-[10px] uppercase tracking-[0.15em]">Défiler</span>
+                    <span className="font-sans text-[10px] uppercase tracking-[0.15em]">{t('scrollPrompt')}</span>
                     <svg
                         className="w-4 h-4"
                         style={{ animation: 'arrowBounce 1.8s ease-in-out infinite' }}

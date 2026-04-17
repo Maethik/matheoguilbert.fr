@@ -2,6 +2,8 @@
 
 import { useRef, useEffect } from 'react';
 import Link from "next/link";
+import { useTranslations } from "next-intl";
+
 import { Project } from "@/lib/projects/types";
 
 type props = {
@@ -14,6 +16,7 @@ type props = {
 export const ProjectCard = ({ project, locale, isTheLast = false, index = 0 }: props) => {
     const num = String(index + 1).padStart(2, '0');
     const cardRef = useRef<HTMLDivElement>(null);
+    const t = useTranslations('projectCard');
 
     useEffect(() => {
         const el = cardRef.current;
@@ -85,7 +88,7 @@ export const ProjectCard = ({ project, locale, isTheLast = false, index = 0 }: p
 
                         {/* CTA */}
                         <div className="flex items-center gap-2 font-sans text-xs uppercase tracking-[0.18em] text-brand-brown border-b border-brand-brown/30 pb-0.5 group-hover:border-brand-brown transition-colors duration-200">
-                            <span>Lire le cas</span>
+                            <span>{t('cta')}</span>
                             <svg
                                 className="w-3.5 h-3.5 group-hover:translate-x-1.5 transition-transform duration-200"
                                 fill="none"

@@ -2,6 +2,7 @@
 
 import { useRef, useEffect } from 'react';
 import Link from 'next/link';
+import { useTranslations } from "next-intl";
 
 type props = {
     locale: string;
@@ -15,6 +16,7 @@ type props = {
 
 export function OtherProjects({ locale, projects }: props) {
     const ref = useRef<HTMLElement>(null);
+    const t = useTranslations('projectPage.otherProjects');
 
     useEffect(() => {
         const el = ref.current;
@@ -45,12 +47,12 @@ export function OtherProjects({ locale, projects }: props) {
             <div className="flex items-center gap-3 mb-6">
                 <span className="w-6 h-px bg-brand-brown/40" />
                 <span className="font-sans text-[10px] uppercase tracking-[0.2em] text-brand-brown/40">
-                    Autres projets
+                    {t('sectionLabel')}
                 </span>
             </div>
 
             <h2 className="reveal font-serif text-[clamp(48px,6vw,80px)] leading-none text-brand-brown mb-12">
-                Voir aussi
+                {t('title')}
             </h2>
 
             <div className="grid gap-6 md:grid-cols-2">

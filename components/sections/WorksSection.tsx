@@ -1,6 +1,8 @@
 'use client';
 
 import { useRef, useEffect } from 'react';
+import { useTranslations } from "next-intl";
+
 import { Project } from "@/lib/projects/types";
 import { ProjectCard } from "../ui/ProjectCard";
 
@@ -11,6 +13,7 @@ type props = {
 
 export default function WorksSection({ projects, locale }: props) {
     const sectionRef = useRef<HTMLElement>(null);
+    const t = useTranslations('works');
 
     useEffect(() => {
         const section = sectionRef.current;
@@ -39,11 +42,11 @@ export default function WorksSection({ projects, locale }: props) {
             {/* Section label */}
             <div className="reveal flex items-center gap-3 mb-4">
                 <span className="w-8 h-px bg-brand-brown/40" />
-                <span className="font-sans text-[11px] uppercase tracking-[0.2em] text-brand-brown/45">Sélection de projets</span>
+                <span className="font-sans text-[11px] uppercase tracking-[0.2em] text-brand-brown/45">{t('sectionLabel')}</span>
             </div>
 
             <h2 className="reveal font-serif text-[clamp(56px,8vw,112px)] text-brand-brown leading-none mb-12 md:mb-16">
-                Travaux
+                {t('title')}
             </h2>
 
             <div className="w-full">

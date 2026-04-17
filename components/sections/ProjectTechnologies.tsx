@@ -1,6 +1,7 @@
 'use client';
 
 import { useRef, useEffect } from 'react';
+import { useTranslations } from "next-intl";
 
 type props = {
     technologies: string[];
@@ -8,6 +9,7 @@ type props = {
 
 export function ProjectTechnologies({ technologies }: props) {
     const ref = useRef<HTMLElement>(null);
+    const t = useTranslations('projectPage.technologies');
 
     useEffect(() => {
         const el = ref.current;
@@ -32,7 +34,7 @@ export function ProjectTechnologies({ technologies }: props) {
             <div className="flex items-center gap-3 mb-6">
                 <span className="w-6 h-px bg-brand-brown/40" />
                 <span className="font-sans text-[10px] uppercase tracking-[0.2em] text-brand-brown/40">
-                    Technologies
+                    {t('sectionLabel')}
                 </span>
             </div>
 

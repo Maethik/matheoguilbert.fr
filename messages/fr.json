@@ -7,11 +7,7 @@
     },
     "hero": {
         "sectionLabel": "Développeur Full Stack & Architecte Web",
-        "title": [
-            "Ensemble,",
-            "construisons",
-            "ce qui dure."
-        ],
+        "title": "Ensemble, construisons quelque chose de durable.",
         "subtitle": "Je conçois des architectures robustes, scalables et pérennes — des fondations qui supportent la croissance de votre produit dans le temps.",
         "cta": "Voir mes travaux",
         "scrollPrompt": "Défiler"
@@ -55,6 +51,7 @@
         }
     },
     "footer": {
+        "me": "Développeur Full Stack & Architecte Web",
         "legal": {
             "title": "Légal",
             "legalNotice": "Mentions Légales",
@@ -64,6 +61,7 @@
     },
     "projectPage": {
         "hero": {
+            "backToProjects": "Retour aux projets",
             "scrollPrompt": "Défiler"
         },
         "meta": {

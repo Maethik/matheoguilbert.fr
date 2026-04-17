@@ -7,11 +7,7 @@
     },
     "hero": {
         "sectionLabel": "Full Stack Developer & Web Architect",
-        "title": [
-            "Together,",
-            "let's build",
-            "something that lasts."
-        ],
+        "title": "Together, let's build something that lasts.",
         "subtitle": "I design robust, scalable, and sustainable architectures—foundations that support your product’s growth over time.",
         "cta": "View my work",
         "scrollPrompt": "Scroll"
@@ -55,6 +51,7 @@
         }
     },
     "footer": {
+        "me": "Full Stack Developer & Web Architect",
         "legal": {
             "title": "Legal",
             "legalNotice": "Legal Notice",
@@ -64,6 +61,7 @@
     },
     "projectPage": {
         "hero": {
+            "backToProjects": "Back to projects",
             "scrollPrompt": "Scroll"
         },
         "meta": {
