@@ -90,6 +90,9 @@
         "otherProjects": {
             "sectionLabel": "Autres projets",
             "title": "Voir aussi"
+        },
+        "visitButton": {
+            "text": "Visiter le site"
         }
     }
 }

@@ -1,9 +1,12 @@
+import { useTranslations } from "next-intl";
+
 type VisitButtonProps = {
     href: string;
 };
 
 export function ProjectVisitButton({ href }: VisitButtonProps) {
     if (!href) return null;
+    const t = useTranslations('projectPage.visitButton');
 
     return (
         <div className="flex justify-center py-6">
@@ -13,7 +16,7 @@ export function ProjectVisitButton({ href }: VisitButtonProps) {
                 rel="noreferrer"
                 className="group inline-flex items-center gap-3 bg-brand-brown text-brand-beige font-sans text-sm uppercase tracking-[0.18em] px-8 py-4 rounded-full hover:bg-brand-brown/85 transition-colors duration-200 cursor-pointer"
             >
-                Visiter le projet
+                {t('text')}
                 <svg
                     className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-200"
                     fill="none"
