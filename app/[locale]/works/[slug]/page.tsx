@@ -14,22 +14,31 @@ type props = {
     }>;
 };
 
+const LOCALES = ["fr", "en"];
+
 export function generateStaticParams() {
-    return getProjectSlugs().flatMap((slug: any) => [
-        { locale: "fr", slug },
-        { locale: "en", slug },
-    ]);
+    const paths: { locale: string; slug: string }[] = [];
+
+    LOCALES.forEach((locale) => {
+        const slugs = getProjectSlugs(locale);
+        slugs.forEach((slug) => {
+            paths.push({ locale, slug });
+        });
+    });
+
+    return paths;
 }
 
 export default async function ProjectPage({ params }: props) {
     const { locale, slug } = await params;
-    const project = getProjectBySlug(slug);
+    
+    const project = getProjectBySlug(slug, locale);
 
     if (!project) {
         notFound();
     }
 
-    const otherProjects = getAllProjects()
+    const otherProjects = getAllProjects(locale)
         .filter((item: any) => item.slug !== slug && item.ready)
         .slice(0, 2)
         .map((item: any) => ({
@@ -48,7 +57,6 @@ export default async function ProjectPage({ params }: props) {
                 dateLabel={project.dateLabel}
                 cover={project.cover}
             />
-
             <div className="mx-auto max-w-[900px] px-8 md:px-14 lg:px-6">
                 <ProjectMeta
                     dateLabel={project.dateLabel}

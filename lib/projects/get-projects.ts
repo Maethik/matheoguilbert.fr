@@ -3,22 +3,24 @@ import path from "node:path";
 import matter from "gray-matter";
 import { Project, ProjectFrontmatter } from "./types";
 
-const projectsDirectory = path.join(process.cwd(), "content/projects");
+const CONTENT_DIR = path.join(process.cwd(), "content/projects");
 
-function fileNameToSlug(fileName: string) {
-    return fileName.replace(/\.mdx$/, "");
-}
+export function getProjectSlugs(locale: string) {
+    const localeDirectory = path.join(CONTENT_DIR, locale);
+    
+    if (!fs.existsSync(localeDirectory)) {
+        return [];
+    }
 
-export function getProjectSlugs() {
     return fs
-        .readdirSync(projectsDirectory)
+        .readdirSync(localeDirectory)
         .filter((file) => file.endsWith(".mdx"))
-        .map(fileNameToSlug);
+        .map((fileName) => fileName.replace(/\.mdx$/, ""));
 }
 
-export function getProjectBySlug(slug: string): Project | null {
+export function getProjectBySlug(slug: string, locale: string): Project | null {
     const realSlug = slug.replace(/\.mdx$/, "");
-    const fullPath = path.join(projectsDirectory, `${realSlug}.mdx`);
+    const fullPath = path.join(CONTENT_DIR, locale, `${realSlug}.mdx`);
 
     if (!fs.existsSync(fullPath)) {
         return null;
@@ -34,9 +36,9 @@ export function getProjectBySlug(slug: string): Project | null {
     };
 }
 
-export function getAllProjects(): Project[] {
-    return getProjectSlugs()
-        .map((slug) => getProjectBySlug(slug))
+export function getAllProjects(locale: string): Project[] {
+    return getProjectSlugs(locale)
+        .map((slug) => getProjectBySlug(slug, locale))
         .filter((project): project is Project => project !== null)
         .sort((a, b) => a.priority - b.priority);
 }
