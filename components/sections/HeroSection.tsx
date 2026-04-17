@@ -22,6 +22,7 @@ export default function HeroSection() {
 
     return (
         <section
+            id="home"
             ref={sectionRef}
             className="w-full min-h-[calc(100vh-(2*11px))] rounded-[10px] bg-brand-brown text-brand-beige flex flex-col overflow-hidden relative"
         >

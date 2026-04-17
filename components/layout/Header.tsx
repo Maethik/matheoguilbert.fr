@@ -17,7 +17,7 @@ export default function Header() {
     const homePath = `/${locale}`;
 
     const links = [
-        { text: t('home'), target: homePath },
+        { text: t('home'), target: `${homePath}#home` },
         { text: t('works'), target: `${homePath}#works` },
         { text: t('about'), target: `${homePath}#about` },
         { text: t('blog'), target: `${homePath}/blog` },
@@ -72,7 +72,7 @@ export default function Header() {
     return (
         <div className="bg-brand-beige h-20 fixed left-2.75 right-2.75 z-50 rounded-b-[20px]">
             <header className="h-20 bg-brand-brown text-brand-beige py-6 px-10 flex justify-between items-center rounded-[10px]">
-                <Link href={homePath}>
+                <Link href={`${homePath}#home`}>
                     <div className="hidden md:block font-serif text-2xl font-light cursor-pointer">M. Guilbert</div>
                     <img className="block md:hidden w-auto h-15 cursor-pointer" src="/icons/logo.svg" alt="logo mg dev" />
                 </Link>
