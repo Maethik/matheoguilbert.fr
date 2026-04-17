@@ -34,10 +34,9 @@ export default function RootLayout({
 				<div className="sticky top-0 z-50 bg-brand-beige w-full px-2.75 pt-2.75">
 					<Header />
 				</div>
+				
 				{/* Scrolling bloc */}
 				<CustomScrollArea>
-					
-					
 					<main className="px-2.75 pb-2.75">
 						{children}
 					</main>

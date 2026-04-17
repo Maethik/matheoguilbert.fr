@@ -6,6 +6,8 @@ import { useParams, usePathname } from "next/navigation";
 import { CiMenuFries } from "react-icons/ci";
 import { IoCloseOutline } from "react-icons/io5";
 
+import LanguageSwitcher from "../ui/LanguageSwitcher";
+
 export default function Header() {
     const params = useParams<{ locale?: string }>();
     const pathname = usePathname();
@@ -84,7 +86,9 @@ export default function Header() {
                         ))}
                     </ul>
                 </nav>
-                <div className="hidden sm:block font-sans text-base font-light">France</div>
+                <div className="hidden sm:block">
+                    <LanguageSwitcher />
+                </div>
 
                 <nav className="block sm:hidden">
                     <button
@@ -140,10 +144,11 @@ export default function Header() {
                     </nav>
 
                     <div
-                        className={`text-brand-beige/80 text-sm font-sans transition-all duration-700 ${showText ? "translate-x-0 opacity-100" : "-translate-x-8 opacity-0"}`}
+                        className={`text-brand-beige/80 text-sm font-sans transition-all duration-700 flex justify-between items-center ${showText ? "translate-x-0 opacity-100" : "-translate-x-8 opacity-0"}`}
                         style={{ transitionDelay: showText ? "650ms" : "0ms" }}
                     >
-                        France
+                        <span>Sélection de la langue</span>
+                        <LanguageSwitcher />
                     </div>
                 </div>
             </div>
