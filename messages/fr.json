@@ -1,0 +1,83 @@
+{
+    "header": {
+        "home": "Accueil",
+        "works": "Travaux",
+        "about": "À propos",
+        "blog": "Blog"
+    },
+    "hero": {
+        "sectionLabel": "Développeur Full Stack & Architecte Web",
+        "title": [
+            "Ensemble,",
+            "construisons",
+            "ce qui dure."
+        ],
+        "subtitle": "Je conçois des architectures robustes, scalables et pérennes — des fondations qui supportent la croissance de votre produit dans le temps.",
+        "cta": "Voir mes travaux",
+        "scrollPrompt": "Défiler"
+    },
+    "works": {
+        "sectionLabel": "Sélection de projets",
+        "title": "Travaux"
+    },
+    "projectCard": {
+        "cta": "Lire plus"
+    },
+    "approach": {
+        "sectionLabel": "Approche",
+        "feature1": {
+            "title": "Plus qu'un simple exécutant",
+            "text": "Grâce à mon background en conception numérique et mobile, je ne me contente pas de coder. J'apporte un regard critique et constructif sur l'ensemble de votre projet."
+        },
+        "feature2": {
+            "title": "Des fondations en béton",
+            "text": "Ma spécialité : l'architecture. Je construis des solutions pérennes, évolutives et capables d'absorber la croissance de votre produit dans le temps."
+        },
+        "feature3": {
+            "title": "L'utilisateur au centre",
+            "text": "Le code parfait n'est rien si le produit ne répond pas à un besoin. Je place l'expérience utilisateur et la fonctionnalité au cœur de mes développements."
+        }
+    },
+    "about": {
+        "sectionLabel": "Parcours",
+        "title": "À propos",
+        "step1": {
+            "title": "Les Débuts",
+            "text": "J'ai commencé par le web en 2019 suite à un stage, je n'ai plus jamais arrêté. Aujourd'hui je veux en faire mon métier."
+        },
+        "step2": {
+            "title": "L'Évolution",
+            "text": "Après un bac STI2D avec mention Très bien j'ai entamé un BUT Informatique Parcours Développement IA."
+        },
+        "step3": {
+            "title": "Aujourd'hui",
+            "text": "Je suis entrepreneur, co-fondateur d'une startup et développeur freelance, je vis de ma passion."
+        }
+    },
+    "footer": {
+        "legal": {
+            "title": "Légal",
+            "legalNotice": "Mentions Légales",
+            "termsAndConditions": "Conditions Générales de Vente"
+        },
+        "copyright": "© 2026 M. Guilbert. Tous droits réservés."
+    },
+    "projectPage": {
+        "hero": {
+            "scrollPrompt": "Défiler"
+        },
+        "meta": {
+            "year": "Année",
+            "category": "Catégorie",
+            "roles": "Rôles",
+            "client": "Client"
+        },
+        "technologies": {
+            "sectionLabel": "Technologies"
+        },
+        "otherProjects": {
+            "sectionLabel": "Autres projets",
+            "title": "Voir aussi"
+        }
+    }
+}

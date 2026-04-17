@@ -1,0 +1,83 @@
+{
+    "header": {
+        "home": "Home",
+        "works": "Works",
+        "about": "About",
+        "blog": "Blog"
+    },
+    "hero": {
+        "sectionLabel": "Full Stack Developer & Web Architect",
+        "title": [
+            "Together,",
+            "let's build",
+            "something that lasts."
+        ],
+        "subtitle": "I design robust, scalable, and sustainable architectures—foundations that support your product’s growth over time.",
+        "cta": "View my work",
+        "scrollPrompt": "Scroll"
+    },
+    "works": {
+        "sectionLabel": "Project selection",
+        "title": "Works"
+    },
+    "projectCard": {
+        "cta": "Read more"
+    },
+    "approach": {
+        "sectionLabel": "Approach",
+        "feature1": {
+            "title": "More than just a doer",
+            "text": "Thanks to my background in digital and mobile design, I don’t just write code. I bring a critical and constructive perspective to every aspect of your project."
+        },
+        "feature2": {
+            "title": "Concrete foundations",
+            "text": "My specialty is architecture. I build sustainable, scalable solutions that can accommodate your product’s growth over time."
+        },
+        "feature3": {
+            "title": "User-centered",
+            "text": "Perfect code is meaningless if the product doesn't meet a need. I put user experience and functionality at the heart of my development work."
+        }
+    },
+    "about": {
+        "sectionLabel": "Course",
+        "title": "About",
+        "step1": {
+            "title": "The Beginnings",
+            "text": "I got started in web design in 2019 after doing an internship, and I haven't stopped since. Now I want to make it my career."
+        },
+        "step2": {
+            "title": "Evolution",
+            "text": "After graduating from high school with a STI2D diploma and honors, I began a Bachelor's degree in Computer Science with a focus on AI Development."
+        },
+        "step3": {
+            "title": "Today",
+            "text": "I'm an entrepreneur, co-founder of a startup, and freelance developer—I make a living doing what I love."
+        }
+    },
+    "footer": {
+        "legal": {
+            "title": "Legal",
+            "legalNotice": "Legal Notice",
+            "termsAndConditions": "Terms and Conditions"
+        },
+        "copyright": "© 2026 M. Guilbert. All rights reserved."
+    },
+    "projectPage": {
+        "hero": {
+            "scrollPrompt": "Scroll"
+        },
+        "meta": {
+            "year": "Year",
+            "category": "Category",
+            "roles": "Roles",
+            "client": "Client"
+        },
+        "technologies": {
+            "sectionLabel": "Technologies"
+        },
+        "otherProjects": {
+            "sectionLabel": "Other projets",
+            "title": "See also"
+        }
+    }
+}
