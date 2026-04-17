@@ -110,21 +110,7 @@ export default function HeroSection() {
             </div>
 
             {/* Bottom bar — scroll indicator */}
-            <div className="flex justify-between items-end px-8 md:px-14 lg:px-20 pb-8">
-                {/* Tech tags */}
-                <div
-                    className="hero-reveal flex gap-3 flex-wrap"
-                    style={{ opacity: 0, transform: 'translateY(28px)', transition: 'opacity 700ms cubic-bezier(0.22,1,0.36,1), transform 700ms cubic-bezier(0.22,1,0.36,1)' }}
-                >
-                    {['FastAPI', 'React', 'PostgreSQL', 'Docker'].map((tag) => (
-                        <span
-                            key={tag}
-                            className="font-sans text-[11px] uppercase tracking-widest text-brand-beige/35 border border-brand-beige/15 rounded-full px-3 py-1"
-                        >
-                            {tag}
-                        </span>
-                    ))}
-                </div>
+            <div className="flex justify-center items-center px-8 md:px-14 lg:px-20 pb-8">
 
                 {/* Scroll arrow */}
                 <div
