@@ -59,6 +59,17 @@
         },
         "copyright": "© 2026 M. Guilbert. All rights reserved."
     },
+    "blogPage": {
+        "hero": {
+            "sectionLabel": "Thoughts & articles",
+            "title": "Blog",
+            "subtitle": "Thoughts on architecture, web development, and the practices that make products last."
+        },
+        "backToBlog": "Back to blog",
+        "scrollPrompt": "Scroll",
+        "readArticle": "Read article",
+        "noArticles": "No articles yet."
+    },
     "projectPage": {
         "hero": {
             "backToProjects": "Back to projects",

@@ -6,7 +6,8 @@
       "mcp__magic__21st_magic_component_inspiration",
       "Bash(npm run *)",
       "WebFetch(domain:localhost)",
-      "Bash(curl -s http://localhost:3000/fr)"
+      "Bash(curl -s http://localhost:3000/fr)",
+      "Bash(npx tsc *)"
     ]
   }
 }
