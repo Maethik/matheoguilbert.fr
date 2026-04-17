@@ -1,15 +1,33 @@
 type props = {
-    imagePath   : string;
-    title       : String;
-    text        : String;
+    imagePath: string;
+    title: string;
+    text: string;
+    delay?: number;
 };
 
-export const FeatureColumn = ({ imagePath, title, text }: props) => {
+export const FeatureColumn = ({ imagePath, title, text, delay = 0 }: props) => {
     return (
-        <div className="flex flex-col items-center justify-start max-w-100 h-auto gap-7">
-            <img className="w-33.75 h-33.75" src={imagePath} alt={`icon illustrating the text ${title}`} />
-            <div className="font-serif text-brand-brown text-center leading-[1.05] text-balance text-[clamp(2rem,5vw,30px)]">{title}</div>
-            <div className="font-sans text-base text-center">{text}</div>
+        <div
+            className="reveal flex flex-col items-center justify-start max-w-[320px] gap-6"
+            style={{ transitionDelay: `${delay}ms` }}
+        >
+            {/* Icon container */}
+            <div className="w-20 h-20 rounded-2xl bg-brand-brown/6 flex items-center justify-center group-hover:bg-brand-brown/10 transition-colors duration-300">
+                <img
+                    className="w-10 h-10"
+                    src={imagePath}
+                    alt=""
+                    aria-hidden="true"
+                />
+            </div>
+
+            <div className="font-serif text-brand-brown text-center leading-[1.1] text-[clamp(1.5rem,2.5vw,1.75rem)]">
+                {title}
+            </div>
+
+            <div className="font-sans text-sm text-center text-brand-brown/65 leading-relaxed">
+                {text}
+            </div>
         </div>
     );
 };

@@ -16,11 +16,13 @@ export default async function Home({ params }: props) {
 	const projects = getAllProjects().filter((item) => item.ready);
 
 	return (
-		<main className=" bg-brand-beige text-brand-black flex flex-col items-center justify-center">
+		<main className="bg-brand-beige text-brand-brown flex flex-col">
 			<HeroSection />
-			<WorksSection projects={projects} locale={locale} />
-			<FeatureSection />
-			<TimelineSection />
+			<div className="px-8 md:px-14 lg:px-20">
+				<WorksSection projects={projects} locale={locale} />
+				<FeatureSection />
+				<TimelineSection />
+			</div>
 		</main>
 	);
 }

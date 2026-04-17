@@ -1,99 +1,157 @@
-export default function TimelineSection() {
-    const steps = [
-        {
-            title: "Les Débuts",
-            text: "J'ai commencé par le web en 2019 suite à un stage, je n'ai plus jamais arrêté. Aujourd'hui je veux en faire mon métier",
-            position: "top" as const,
-            left: "16%",
-        },
-        {
-            title: "L'Évolution",
-            text: "Après un bac STI2D avec mention Très bien j'ai entamé un BUT Informatique Parcours Développement IA",
-            position: "bottom" as const,
-            left: "50%",
-        },
-        {
-            title: "Aujourd'hui",
-            text: "Je suis entrepreneur, co-fondateur d'une startup et développeur freelance, je vis de ma passion",
-            position: "top" as const,
-            left: "84%",
-        },
-    ];
+'use client';
 
-    const lineTop = "58%";
-    const progressWidth = "95%";
+import { useRef, useEffect, useState } from 'react';
+
+const steps = [
+    {
+        title: 'Les Débuts',
+        text: "J'ai commencé par le web en 2019 suite à un stage, je n'ai plus jamais arrêté. Aujourd'hui je veux en faire mon métier.",
+        year: '2019',
+        position: 'top' as const,
+        left: '16%',
+    },
+    {
+        title: 'L\'Évolution',
+        text: "Après un bac STI2D avec mention Très bien j'ai entamé un BUT Informatique Parcours Développement IA.",
+        year: '2022',
+        position: 'bottom' as const,
+        left: '50%',
+    },
+    {
+        title: 'Aujourd\'hui',
+        text: "Je suis entrepreneur, co-fondateur d'une startup et développeur freelance, je vis de ma passion.",
+        year: '2026',
+        position: 'top' as const,
+        left: '84%',
+    },
+];
+
+const lineTop = '58%';
+
+export default function TimelineSection() {
+    const sectionRef = useRef<HTMLElement>(null);
+    const [visible, setVisible] = useState(false);
+
+    useEffect(() => {
+        const section = sectionRef.current;
+        if (!section) return;
+
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                if (entry.isIntersecting) {
+                    setVisible(true);
+                    section.querySelectorAll('.reveal').forEach((el) => el.classList.add('visible'));
+                    observer.unobserve(section);
+                }
+            },
+            { threshold: 0.12 }
+        );
+
+        observer.observe(section);
+        return () => observer.disconnect();
+    }, []);
 
     return (
-        <section id="about" className="bg-[#f5f5f3] py-20 md:py-32">
-            <div className="mx-auto w-full px-6 md:w-[90vw]">
-                <h2 className="mb-16 text-center font-serif text-[clamp(80px,10vw,128px)] leading-none text-brand-brown md:mb-24 md:text-6xl">
-                    A propos de moi
-                </h2>
+        <section id="about" ref={sectionRef} className="w-full py-24 md:py-36 bg-brand-brown/3 rounded-2xl px-6 md:px-12 lg:px-20">
+            {/* Label */}
+            <div className="reveal flex items-center gap-3 mb-6">
+                <span className="w-8 h-px bg-brand-brown/40" />
+                <span className="font-sans text-[11px] uppercase tracking-[0.2em] text-brand-brown/45">Parcours</span>
+            </div>
 
-                <div className="relative mx-auto w-full md:h-[420px]">
-                    {/* Mobile layout */}
-                    <div className="flex flex-col gap-6 md:hidden">
-                        {steps.map((step, index) => (
-                            <div
-                                key={index}
-                                className="rounded-md border border-gray-300 border-l-4 border-l-brand-brown bg-white p-5"
-                            >
-                                <h3 className="mb-3 font-serif text-2xl text-brand-brown">
-                                    {step.title}
-                                </h3>
-                                <p className="leading-7 text-[#364153]">
-                                    {step.text}
-                                </p>
-                            </div>
-                        ))}
+            <h2 className="reveal font-serif text-[clamp(48px,7vw,100px)] leading-none text-brand-brown mb-16 md:mb-24">
+                À propos
+            </h2>
+
+            {/* Mobile layout */}
+            <div className="flex flex-col gap-5 md:hidden">
+                {steps.map((step, i) => (
+                    <div
+                        key={i}
+                        className="reveal rounded-xl border border-brand-brown/12 border-l-4 border-l-brand-brown bg-white/60 p-6 backdrop-blur-sm"
+                        style={{ transitionDelay: `${i * 100}ms` }}
+                    >
+                        <span className="font-sans text-[11px] uppercase tracking-widest text-brand-brown/40 mb-3 block">{step.year}</span>
+                        <h3 className="font-serif text-2xl text-brand-brown mb-3">{step.title}</h3>
+                        <p className="font-sans text-sm leading-relaxed text-brand-brown/65">{step.text}</p>
                     </div>
+                ))}
+            </div>
 
-                    {/* Desktop timeline */}
-                    <div className="hidden md:block">
-                        {/* Base line */}
+            {/* Desktop timeline */}
+            <div className="hidden md:block relative h-[440px]">
+                {/* Background track */}
+                <div
+                    className="absolute left-0 right-0 h-px bg-brand-brown/12 rounded-full"
+                    style={{ top: lineTop }}
+                />
+
+                {/* Animated progress line */}
+                <div
+                    className="absolute left-0 h-px bg-brand-brown/50 rounded-full"
+                    style={{
+                        top: lineTop,
+                        width: visible ? '95%' : '0%',
+                        transition: 'width 1400ms cubic-bezier(0.22, 1, 0.36, 1)',
+                        transitionDelay: '200ms',
+                    }}
+                />
+
+                {steps.map((step, i) => (
+                    <div
+                        key={i}
+                        className="absolute -translate-x-1/2"
+                        style={{ left: step.left, top: lineTop }}
+                    >
+                        {/* Dot */}
                         <div
-                            className="absolute left-0 right-0 h-1.5 rounded-full bg-[#d9dde2]"
-                            style={{ top: lineTop }}
-                        />
-
-                        {/* Brown progress */}
-                        <div
-                            className="absolute left-0 h-1.5 rounded-full bg-brand-brown"
-                            style={{ top: lineTop, width: progressWidth }}
-                        />
-
-                        {steps.map((step, index) => (
+                            className="absolute left-1/2 -translate-x-1/2 -translate-y-1/2"
+                            style={{ top: 0 }}
+                        >
                             <div
-                                key={index}
-                                className="absolute -translate-x-1/2"
-                                style={{ left: step.left, top: lineTop }}
-                            >
-                                {/* Point */}
-                                <div className="absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2">
-                                    <div className="h-5 w-5 rounded-full border-2 border-white bg-brand-brown shadow-[0_0_0_2px_#3a2318]" />
-                                </div>
+                                className="h-4 w-4 rounded-full border-2 border-brand-beige bg-brand-brown shadow-[0_0_0_3px_rgba(44,30,22,0.2)]"
+                                style={{
+                                    opacity: visible ? 1 : 0,
+                                    transform: visible ? 'scale(1)' : 'scale(0)',
+                                    transition: 'opacity 400ms ease, transform 500ms cubic-bezier(0.34, 1.56, 0.64, 1)',
+                                    transitionDelay: `${600 + i * 200}ms`,
+                                }}
+                            />
+                        </div>
 
-                                {/* Card */}
-                                <div
-                                    className={[
-                                        "absolute left-1/2 w-[280px] -translate-x-1/2 rounded-md border border-gray-300 border-l-4 border-l-brand-brown bg-white p-5 text-center shadow-sm",
-                                        step.position === "top"
-                                            ? "bottom-10"
-                                            : "top-10",
-                                    ].join(" ")}
-                                >
-                                    <h3 className="mb-3 font-serif text-3xl text-brand-brown">
-                                        {step.title}
-                                    </h3>
+                        {/* Year label */}
+                        <div
+                            className="absolute left-1/2 -translate-x-1/2 font-sans text-[10px] uppercase tracking-widest text-brand-brown/35"
+                            style={{
+                                [step.position === 'top' ? 'top' : 'bottom']: '18px',
+                                opacity: visible ? 1 : 0,
+                                transition: 'opacity 400ms ease',
+                                transitionDelay: `${800 + i * 200}ms`,
+                            }}
+                        >
+                            {step.year}
+                        </div>
 
-                                    <p className="leading-7 text-[#364153]">
-                                        {step.text}
-                                    </p>
-                                </div>
-                            </div>
-                        ))}
+                        {/* Card */}
+                        <div
+                            className={[
+                                'absolute left-1/2 w-[260px] -translate-x-1/2 rounded-xl border border-brand-brown/12 border-l-4 border-l-brand-brown bg-white/80 p-5 text-left shadow-sm backdrop-blur-sm',
+                                step.position === 'top' ? 'bottom-10' : 'top-10',
+                            ].join(' ')}
+                            style={{
+                                opacity: visible ? 1 : 0,
+                                transform: visible
+                                    ? 'translateY(0)'
+                                    : step.position === 'top' ? 'translateY(10px)' : 'translateY(-10px)',
+                                transition: 'opacity 600ms ease, transform 600ms cubic-bezier(0.22,1,0.36,1)',
+                                transitionDelay: `${700 + i * 180}ms`,
+                            }}
+                        >
+                            <h3 className="font-serif text-xl text-brand-brown mb-2">{step.title}</h3>
+                            <p className="font-sans text-sm leading-relaxed text-brand-brown/65">{step.text}</p>
+                        </div>
                     </div>
-                </div>
+                ))}
             </div>
         </section>
     );
