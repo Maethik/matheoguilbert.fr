@@ -1,0 +1,45 @@
+---
+ready: true
+title: "Global Git Contribution Graph (GGCG)"
+priority: 4
+description: "A unified, elegant view of all your development activity, bringing together contributions from all your Git repositories into a single interactive heatmap."
+dateLabel: "2026 - present"
+category: "Web application"
+client: "Open Source"
+roles:
+  - "Full-Stack Developer"
+technologies:
+  - "Next JS"
+  - "Rust"
+  - "MariaDB"
+  - "Reids"
+  - "Docker"
+cover: "/images/projects/ggcg/cover.png"
+preview1: "/images/projects/ggcg/preview-1.png"
+preview2: "/images/projects/ggcg/preview-2.png"
+featured: true
+---
+
+<div>
+	<h2>The mission</h2>
+
+	<ProjectsColumns>
+		<div>
+			As developers, our work is often spread across multiple platforms. GitHub is the industry standard, but many companies use GitLab, and open-source communities are increasingly turning to alternatives like CodeBerg or Forgejo.
+			GGCG is a front-end application that aggregates Git contribution data from multiple sources. The project is designed to be self-hosted by developers who wish to do so. A mobile app is also available.
+		</div>
+		<div>
+			This project presented several challenges. Among them were designing the application architecture to balance the performance of resource-intensive and repetitive data aggregations, ensuring the availability of the service—whether self-hosted by the user or publicly accessible via the mobile app—maintaining user configuration persistence, and adhering to the API quotas of various code repositories.
+            All while ensuring data confidentiality and managing the sensitivity of the data.
+		</div>
+	</ProjectsColumns>
+</div>
+
+<ProjectPreviewGrid
+	items={[
+		{ title: "Aperçu 1", image: "/images/projects/ggcg/preview-1.png" },
+		{ title: "Aperçu 2", image: "/images/projects/ggcg/preview-2.png" }
+	]}
+/>
+
+<ProjectVisitButton href="" />
