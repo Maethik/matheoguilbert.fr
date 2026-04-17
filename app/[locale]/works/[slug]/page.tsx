@@ -36,45 +36,46 @@ export default async function ProjectPage({ params }: props) {
             slug: item.slug,
             title: item.title,
             description: item.description,
-            cover: item.cover
+            cover: item.cover,
         }));
 
     return (
-        <main className="bg-[#f5f3ef]">
-            <div className="mx-auto max-w-full flex flex-col items-center">
-                <ProjectHero
-                    locale={locale}
-                    title={project.title}
-                    description={project.description}
+        <main className="bg-brand-beige">
+            <ProjectHero
+                locale={locale}
+                title={project.title}
+                description={project.description}
+                dateLabel={project.dateLabel}
+                cover={project.cover}
+            />
+
+            <div className="mx-auto max-w-[900px] px-8 md:px-14 lg:px-6">
+                <ProjectMeta
                     dateLabel={project.dateLabel}
+                    category={project.category}
+                    roles={project.roles}
+                    client={project.client}
                 />
 
-                <div className="lg:max-w-[70vw]">
-                    <ProjectMeta
-                        dateLabel={project.dateLabel}
-                        category={project.category}
-                        roles={project.roles}
-                        client={project.client}
-                    />
+                <ProjectTechnologies technologies={project.technologies} />
 
-                    <ProjectTechnologies technologies={project.technologies} />
+                <section className="pb-16">
+                    <article
+                        className="
+                            flex flex-col gap-16
+                            [&_h2]:font-serif [&_h2]:text-[clamp(52px,6vw,80px)] [&_h2]:text-brand-brown [&_h2]:leading-none [&_h2]:mb-8 [&_h2]:mt-4
+                            [&_p]:font-sans [&_p]:text-sm [&_p]:text-brand-brown/70 [&_p]:leading-[1.8]
+                        "
+                    >
+                        <MDXRemote
+                            source={project.content}
+                            components={mdxComponents}
+                            options={{ blockJS: false, blockDangerousJS: true }}
+                        />
+                    </article>
+                </section>
 
-                    <section className="pb-16">
-                        <article className="
-                            flex flex-col gap-20
-                            [&>div>h2]:text-[clamp(80px,10vw,128px)] [&>div>h2]:font-serif [&>div>h2]:text-brand-brown
-                        ">
-                            <MDXRemote
-                                source={project.content}
-                                components={mdxComponents}
-                                options={{ blockJS: false, blockDangerousJS: true }}
-                            />
-                        </article>
-                    </section>
-
-                    <OtherProjects locale={locale} projects={otherProjects} />
-                </div>
-
+                <OtherProjects locale={locale} projects={otherProjects} />
             </div>
         </main>
     );

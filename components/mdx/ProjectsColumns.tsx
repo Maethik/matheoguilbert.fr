@@ -1,11 +1,11 @@
 type props = {
-	children: React.ReactNode;
+    children: React.ReactNode;
 };
 
 export function ProjectsColumns({ children }: props) {
-	return (
-		<div className="grid gap-6 text-justify text-base font-sans lg:grid-cols-2 lg:space-x-6">
-			{children}
-		</div>
-	);
+    return (
+        <div className="grid gap-8 lg:grid-cols-2 lg:gap-14">
+            {children}
+        </div>
+    );
 }
