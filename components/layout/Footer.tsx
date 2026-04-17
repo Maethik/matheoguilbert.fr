@@ -17,12 +17,13 @@ export default function Footer() {
 
                 <div className="flex flex-col items-start justify-start gap-4">
                     <h3 className="font-serif text-3xl">{t('legal.title')}</h3>
-                    <p className="font-sans text-base">{t('legal.legalNotice')}</p>
-                    <p className="font-sans text-base">{t('legal.termsAndConditions')}</p>
+                    <a href="/legals/legalNotice.pdf" target="_blank" className="font-sans text-base">{t('legal.legalNotice')}</a>
+                    <a href="/legals/privacyPolicy.pdf" target="_blank" className="font-sans text-base">{t('legal.privacyPolicy')}</a>
                 </div>
                 
                 <div className="flex flex-col items-start justify-start gap-4">
                     <h3 className="font-serif text-3xl">Contact</h3>
+                    <p className="font-sans text-base">contact@matheoguilbert.fr</p>
                     <p className="font-sans text-base">+33 6 71 03 67 12</p>
                 </div>
             </div>
