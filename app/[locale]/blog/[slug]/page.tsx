@@ -4,6 +4,7 @@ import { getArticleBySlug, getArticleSlugs } from "@/lib/blog/get-articles";
 import { ArticleHero } from "@/components/sections/ArticleHero";
 import { ArticleSummary } from "@/components/sections/ArticleSummary";
 import { locales } from "@/middleware";
+import Link from "next/link";
 
 type props = {
     params: Promise<{
@@ -23,6 +24,31 @@ export function generateStaticParams() {
 
     return paths;
 }
+
+const mdxComponents = {
+    a: (props: any) => {
+        const href = props.href;
+        const isInternalLink = href && (href.startsWith('/') || href.startsWith('#'));
+
+        if (isInternalLink) {
+            return (
+                <Link href={href} {...props}>
+                    {props.children}
+                </Link>
+            );
+        }
+
+        return (
+            <a 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                {...props} 
+            >
+                {props.children}
+            </a>
+        );
+    },
+};
 
 export default async function ArticlePage({ params }: props) {
     const { locale, slug } = await params;
@@ -65,11 +91,15 @@ export default async function ArticlePage({ params }: props) {
                         [&_h2]:font-serif [&_h2]:text-[clamp(40px,5vw,64px)] [&_h2]:text-brand-brown [&_h2]:leading-none [&_h2]:mb-6 [&_h2]:mt-2
                         [&_p]:font-sans [&_p]:text-sm [&_p]:text-brand-brown/70 [&_p]:leading-[1.9]
                         [&_strong]:font-semibold [&_strong]:text-brand-brown/85
+                        [&_a]:text-brand-brown [&_a]:underline 
+                        [&_ul]:font-sans [&_ul]:text-sm [&_ul]:text-brand-brown/70 [&_ul]:leading-[1.9] [&_ul]:list-disc [&_ul]:pl-5 [&_ul]:space-y-1
+                        [&_li]:font-sans [&_li]:text-sm [&_li]:text-brand-brown/70 [&_li]:leading-[1.9]
                     "
                 >
                     <MDXRemote
                         source={article.content}
                         options={{ blockJS: false, blockDangerousJS: true }}
+                        components={mdxComponents}
                     />
                 </article>
             </div>

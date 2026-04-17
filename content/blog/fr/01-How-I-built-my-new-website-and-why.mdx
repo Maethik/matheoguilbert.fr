@@ -1,0 +1,71 @@
+---
+ready: true
+title: "Comment j'ai construit mon nouveau site internet, et pourquoi ?"
+description: "Découvrez comment j'ai contruit mon, l'origine de ce besoin et les étapes par lesquelles je suis passé."
+date: "2026-04-17"
+category: "Développement Web"
+tags:
+  - "Portfolio"
+  - "Design"
+  - "Apprentissage"
+readTime: "5 min"
+summary:
+  - "Pourquoi maintenant et pas des années plus tôt ?"
+  - "Le plus long : maquette Figma"
+  - "Comment et avec quoi ? La stack de rêve"
+  - "Mon terrain de jeu personnel"
+---
+
+<div>
+  	<h2>Pourquoi maintenant et pas des années plus tôt ?</h2>
+
+  	Il faut savoir qu'un site internet, j'en avais déjà un. Il était dépassé, d'un assez mauvais goût en termes de design (je trouve), et surtout, il n'était plus à jour. Je n'y ai jamais retouché depuis qu'il est en ligne (soit il y a 4 ans au moment où cet article est publié)
+	<br />
+	Je le garde volontairement disponible dans [GitHub Pages](https://pages.github.com/) pour que vous puissiez voir l'évolution depuis cette époque : [https://maethik.github.io/matheoguilbert.fr_v1/](https://maethik.github.io/matheoguilbert.fr_v1/)
+	<br />
+	Ce site, je l'avais fait au lycée, en Terminale, dans l'optique d'appuyer mes candidatures [Parcoursup](https://www.parcoursup.gouv.fr/). Et ça aura été utile puisque j'ai été pris partout. En réalité, je ne peux pas être sûr que mon site a été efficace, ni même que qui que ce soit l'ai visiter, car je n'avais pas utilisé d'analyseur de trafic comme [Google Analytics](https://developers.google.com/analytics) ou [Ackee](https://ackee.electerious.com/). Je ne savais même pas ce que c'était à ce moment.
+	<br />
+	De plus, c'est un moment important dans ma vie professionnelle, je me lance en tant que développeur indépendant officiellement, et je ne voudrais pas rater ce départ.
+	Étant donné que tout les développeurs indé, ou autre freelance ont leur portfolio, il me fallait à moi aussi un site qui me permette de dire haut et fort : <strong>Regardez ce que je sais faire ! Missionnez-moi !</strong>
+</div>
+
+<div>
+  	<h2>Le plus long : maquette Figma</h2>
+
+	C'est de loin la partie du process de création de ce site la plus longue. Écrire des lignes de code, je sais faire, et je prends même du plaisir à le faire. Mais passer du temps exclusivement sur du design, même si je connais [Figma](https://www.figma.com/) à force de l'utiliser, c'est long. Et entre 2 éclairs de génie sur comment placer tel ou tel élément, le temps passe.
+	<br />
+	En y passant environ 4h par semaine (c'est une estimation arbitraire, je n'ai aucune métrique pour appuyer cela), j'ai mis au total environ 2 mois, de début février à début avril. Ce n'est qu'après avoir obtenu une version de la maquette qui me satisfaisait suffisamment que je suis passé au développement. Ça m'a pris un peu moins d'une semaine à coder. On se rend vite compte de la différence entre mon niveau d'appétence pour le design et celui pour le développement. Dans le temps ou j'ai fait la maquette, je peux développer <strong>8 fois</strong> ce site. 
+	<br />
+	Pour être plus réaliste, il faudrait prendre en compte le fait que pendant ces deux mois de design, j'ai eu le temps de beaucoup réfléchir la structure du projet et de visualiser exactement ce que j'allais faire, et comment. Ce qui accélère énormément le développement. Comme quoi cette phase de préparation du site n'était pas inutile, juste trop longue à mon goût. Ça deviendrait vraiment intéressant de pousser la maquette à ce point si j'y passais 2 fois moins de temps, pour le même temps de développement.
+</div>
+
+<div>
+  	<h2>Comment et avec quoi ? La stack de rêve</h2>
+
+	J'ai développé ce site avec [Next.JS](https://nextjs.org/). Je ne connaissais pas ce framework, cela m'a permis de l'apprendre. J'avais néanmoins un background conséquent avec [React](https://react.dev/) (j'ai développé [EverEast Solutions](https://evereast-solutions.com/) avec). Et Next.JS étant un framework React, ça m'a facilité la tâche, j'avais déjà acquis les connaissances de base. D'ailleurs, la documentation de NextJS indique clairement qu'il est préférable d'apprendre React avant de commencer Next.JS.
+	<br />
+	Je parle de "stack de rêve" pour la raison suivante, vous allez vite comprendre.
+	<br />
+	<ul>
+		<li>NextJS est développé par [Vercel](https://vercel.com/)</li>
+		<li>Pour déployé le site, j'ai utilisé Vercel</li>
+		<li>Pour la newsletter et le mailling d'une manière générale (pas encore fini d'implémenté), j'utilise [Resend](https://resend.com/)</li>
+		<li>Resend est développé par Vercel</li>
+	</ul>
+	<br />
+	C'est un écosystème d'outils, utilisables indépendamment les uns des autres, des outils très bien fais individuellement, et quand on les utilise ensemble ça devient super pratique et rapide à mettre en place, parce qu'ils font partie du même écosystème justement.
+</div>
+
+<div>
+  	<h2>Mon terrain de jeu personnel</h2>
+
+	Ce site à un autre avantage à mes yeux : me permettre de tester et d'apprendre des trucs.
+	<br />
+	Je ne cherche pas à ce que ce soit le site de l'année sur [Awwwards](https://www.awwwards.com/), je cherche à me mettre en difficulté. J'ai donné deux exemples dans cet article. Je ne connaissais pas Next.JS et l'écosystème Vercel, je l'ai appris. Je ne suis pas à l'aise avec le design, je me suis amélioré en travaillant sur ce point faible et en me mettant au défi. 
+	<br />
+	Je suis partisan d'une philosophie bien connue : c'est en tombant qu'on apprend. Si je le reformule avec mon esprit poétique médiocre : "heurte-toi au mur, tu seras plus mûr".
+	<br />
+	Sur ce, merci d'avoir lu jusqu'ici et a la prochaine, j'espère, dans un autre article.
+	<br />
+	<strong>Mathéo G</strong>
+</div>
