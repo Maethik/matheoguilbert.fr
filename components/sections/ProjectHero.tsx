@@ -47,8 +47,11 @@ export function ProjectHero({ title, description, dateLabel, locale, cover }: pr
                 </div>
             )}
 
-            {/* Back link */}
-            <div className="relative z-10 px-8 md:px-14 lg:px-20 pt-30">
+            {/* Top zone: clears the fixed header (~91px) + anchors the back link */}
+            <div
+                className="relative z-10 shrink-0 flex items-end px-8 md:px-14 lg:px-20 pb-4"
+                style={{ height: 'clamp(120px, 15vh, 160px)' }}
+            >
                 <div
                     className="hero-reveal"
                     style={{ opacity: 0, transform: 'translateY(20px)', transition: 'opacity 500ms ease, transform 500ms cubic-bezier(0.22,1,0.36,1)' }}
@@ -71,8 +74,8 @@ export function ProjectHero({ title, description, dateLabel, locale, cover }: pr
                 </div>
             </div>
 
-            {/* Main content — vertically centred */}
-            <div className="relative z-10 flex flex-col flex-1 items-center justify-center px-8 md:px-14 lg:px-20 py-16 text-center">
+            {/* Main content — centred in the remaining visible area */}
+            <div className="relative z-10 flex flex-col flex-1 items-center justify-center px-8 md:px-14 lg:px-20 text-center">
                 {/* Category pill */}
                 <div
                     className="hero-reveal mb-6"

@@ -25,8 +25,12 @@ export default function HeroSection() {
             ref={sectionRef}
             className="w-full min-h-[calc(100vh-(2*11px))] rounded-[10px] bg-brand-brown text-brand-beige flex flex-col overflow-hidden relative"
         >
+            {/* Spacer: clears the fixed header (~91px) + mirrors the bottom bar height (~52px)
+                so justify-center lands on the visual centre of the viewport below the header */}
+            <div className="shrink-0" style={{ height: 'clamp(120px, 15vh, 160px)' }} />
+
             {/* Main content */}
-            <div className="flex flex-col lg:flex-row flex-1 px-8 md:px-14 lg:px-20 pt-16 pb-12 gap-10 lg:gap-0">
+            <div className="flex flex-col lg:flex-row flex-1 items-center px-8 md:px-14 lg:px-20 gap-10 lg:gap-0">
 
                 {/* Left — editorial text */}
                 <div className="flex flex-col justify-center lg:w-[55%] lg:pr-12 gap-8 lg:gap-10">
@@ -91,10 +95,7 @@ export default function HeroSection() {
                     className="hero-reveal relative flex items-center justify-center lg:w-[45%]"
                     style={{ opacity: 0, transform: 'translateY(28px)', transition: 'opacity 900ms cubic-bezier(0.22,1,0.36,1), transform 900ms cubic-bezier(0.22,1,0.36,1)' }}
                 >
-                    {/* Decorative accent ring */}
-                    <div className="absolute inset-4 rounded-[14px] border border-brand-beige/8 pointer-events-none" />
-
-                    <div className="relative w-full h-full min-h-[320px] lg:min-h-0 rounded-[10px] overflow-hidden">
+                    <div className="relative rounded-[10px] overflow-hidden" style={{ width: 'clamp(260px, 32vw, 420px)', height: 'clamp(320px, 40vw, 520px)' }}>
                         <img
                             src="/images/pofile.png"
                             alt="Mathéo Guilbert, développeur Full Stack"

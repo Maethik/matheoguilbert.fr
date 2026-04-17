@@ -26,7 +26,7 @@ export default function LanguageSwitcher() {
     return (
         <div className="flex items-center gap-2 font-sans text-xs uppercase tracking-widest text-brand-beige">
             {locales.map((language, index) => (
-                <div key={index}>
+                <div key={index} className="flex items-center gap-2">
                     <button 
                         onClick={() => switchLanguage(language)}
                         className={`transition-opacity duration-200 cursor-pointer ${currentLocale === language ? 'opacity-100 font-medium' : 'opacity-40 hover:opacity-70'}`}
