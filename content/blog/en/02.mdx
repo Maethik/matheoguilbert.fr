@@ -1,0 +1,61 @@
+---
+ready: false
+title: "Claude Design vs. Figma Make: How I Combined the Two to Optimize My Prototyping"
+description: A comparison of the two tools and how I used them
+date: 2026-04-23
+category: Technologies
+tags:
+  - Design
+  - AI
+  - Experience
+  - Comparison
+  - Technologies
+readTime: 5 min
+summary:
+  - The Arrival of Claude Design
+  - "The Flip Side: A Restrictive Pricing Model"
+  - "The Alternative: Figma Make"
+  - "The Ideal Workflow: Making Claude and Figma Talk"
+  - Epilogue
+---
+## The Arrival of Claude Design
+
+On **April 17, 2026**, Anthropic introduced Claude Design in its beta version. It is an AI-assisted visual creation tool that allows you to generate and refine designs, interactive prototypes, slideshows, and other visual assets from text requests (prompts) or simply by chatting with Claude.
+
+The idea is to transform a vision into a usable mockup much faster than with a traditional workflow. The tool targets both non-designers who want to present an idea cleanly, and design professionals who want to prototype more quickly.
+
+## The Flip Side: A Restrictive Pricing Model
+
+Claude Design lets you generate visuals in the blink of an eye, which quickly gives you the impression of being a design god. However, nothing is perfect on the first try, even for an AI. And that is where what is, at this stage, the main flaw I've found with it appears: modifying the visual.
+
+At the time of writing this article, the tool allows you to adjust certain parameters like the color or size of an element, or its spatial arrangement. To do this, it uses an approach based on HTML and CSS (notably Flexbox, a web layout system that easily aligns and distributes elements within a container). This remains quite limited for now.
+
+Indeed, when you want to add or remove a complex element, there is only one way to do it: by asking the AI directly. But these requests consume tokens (the computing units billed by the artificial intelligence to read and generate content). And if, like me, you have a Pro plan, the usage limit set for this subscription is reached very quickly. In fact, to design an entire application, you sometimes have to wait until the following week for quotas to reset, or pay up again (which, in the long run, becomes very expensive).
+
+## The Alternative: Figma Make
+
+In the design market, there is another tool distributed by Figma (which belongs to Adobe), namely: Figma Make.
+
+It is a very powerful tool that essentially allows you to do the same thing as Claude Design, but integrated directly into the Figma ecosystem. This mitigates Anthropic's costly modification problem, since Figma Make offers a feature to copy the generated design and then paste it as layers into your mockup. We can then modify this result at will, adapt it to an existing visual, prototype it... In short, do whatever we want with it, without request limits.
+
+Nevertheless, despite the different AI models available in Figma Make, and based on my experience, Claude Design provides much better initial results.
+
+## The Ideal Workflow: Making Claude and Figma Talk
+
+Ideally, when you have two tools with their own pros and cons for accomplishing the same task, you want to get the best out of each.
+
+That is what I did while prototyping the macOS application ThreadSpace, which I am developing solo. I needed to create a mockup quickly to anticipate the software's UX (user experience). Figma Make wasn't giving me the expected results: it stayed stuck on a web SaaS approach (those interfaces typical of subscription-based online software) with a clichéd "AI-made" design that I didn't like at all.
+
+I then turned to Claude Design when it was released. In a few minutes and two requests, the result was convincing and faithful to the description I had provided. But I couldn't refine it as I pleased without exhausting my token quota for nothing.
+
+So, I used Claude's HTML export feature. Following that, I was able to easily convert this web page into a Figma mockup using a third-party plugin.
+
+Today, my process is well-oiled: I tweak the interface in Figma, I prototype as I see fit, and when I run out of inspiration or want to overhaul a large part of the application, I use Figma Make. With my source design as a base and a detailed prompt, Adobe's tool roughs out the redesign work very well.
+
+## Epilogue
+
+This is exactly what I love about computing and the digital world in general. When a tool only partially meets your needs, there is always a way to combine several solutions to build your own workflow. As a developer, I can even create my own tools, like ThreadSpace. And if I don't have the time or the desire to develop my own solution, someone else might do it one day, and that will benefit the greatest number of people.
+
+On that note, thanks for reading this far, and see you next time in another article.
+
+**Mathéo G**

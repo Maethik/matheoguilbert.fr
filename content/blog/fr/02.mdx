@@ -1,0 +1,61 @@
+---
+ready: false
+title: "Claude Design face à Figma Make : Comment j'ai combiné les deux pour optimiser mon prototypage"
+description: Comparatif des deux outils et comment je m'en suis servie
+date: 2026-04-23
+category: Technologies
+tags:
+  - Design
+  - IA
+  - Expérience
+  - Comparatif
+  - Technologies
+readTime: 5 min
+summary:
+  - L'arrivée de Claude Design
+  - "Le revers de la médaille : un modèle économique contraignant"
+  - "L'alternative : Figma Make"
+  - "Le workflow idéal : faire dialoguer Claude et Figma"
+  - Épilogue
+---
+## L'arrivée de Claude Design
+
+Le **17 avril 2026**, [Anthropic](https://www.anthropic.com/) a introduit [Claude Design](https://www.anthropic.com/news/claude-design-anthropic-labs) dans sa version bêta. C'est un outil de création visuelle assisté par IA qui permet de générer et d'affiner des designs, des prototypes interactifs, des diaporamas et d'autres supports visuels, à partir de requêtes textuelles (_prompts_) ou par simple conversation avec Claude.
+
+L’idée est de transformer une vision en maquette exploitable beaucoup plus vite qu’avec un flux de travail classique. L’outil vise autant les non-designers qui veulent présenter une idée proprement, que les professionnels du design qui souhaitent prototyper plus rapidement.
+
+## Le revers de la médaille : un modèle économique contraignant
+
+Claude Design permet de générer des visuels en un clin d'œil, ce qui donne vite l'impression d'être un dieu du design. Cependant, rien n'est parfait du premier coup, même pour une IA. Et c'est là qu'apparaît ce qui est, à ce stade, le principal défaut que je lui ai trouvé : la modification du visuel.
+
+Au moment où j'écris cet article, l'outil permet d'ajuster certains paramètres comme la couleur, la taille d'un élément ou son arrangement dans l'espace. Il utilise pour cela une approche basée sur le HTML et le CSS (notamment _Flexbox_, un système de mise en page web qui permet d'aligner et de répartir facilement les éléments dans un conteneur). Cela reste pour le moment assez limité.
+
+En effet, lorsque l'on veut ajouter ou supprimer un élément complexe, il n'y a qu'une seule manière de le faire : en le demandant directement à l'IA. Seulement, ces requêtes consomment des _tokens_ (les unités de calcul facturées par l'intelligence artificielle pour lire et générer du contenu). Et si, comme moi, vous avez un plan Pro, la limite d'utilisation fixée pour cet abonnement est très vite atteinte. De fait, pour concevoir le design d'une application entière, il faut parfois attendre la semaine suivante pour la réinitialisation des quotas, ou bien repasser à la caisse (ce qui, à terme, revient très cher).
+
+## L'alternative : Figma Make
+
+Sur le marché du design, il existe un autre outil distribué par [Figma](https://www.figma.com/) (qui appartient à Adobe), j'ai nommé : Figma Make.
+
+C'est un outil très puissant qui permet, en substance, de faire la même chose que Claude Design, mais en étant directement intégré dans l'écosystème Figma. Cela pallie le problème des modifications coûteuses d'Anthropic, puisque Figma Make propose une fonctionnalité de copie du design généré pour le coller ensuite sous forme de calques dans votre maquette. Nous pouvons ensuite modifier ce résultat à souhait, l'adapter à un visuel existant, le prototyper... Bref, en faire ce que l'on veut, sans limite de requêtes.
+
+Néanmoins, malgré les différents modèles d'IA disponibles dans Figma Make, et d'après mon expérience, Claude Design fournit de biens meilleurs résultats initiaux.
+
+## Le workflow idéal : faire dialoguer Claude et Figma
+
+L'idéal, quand on a deux outils avec leurs propres avantages et inconvénients pour accomplir une même tâche, c'est de tirer le meilleur de chacun.
+
+C'est ce que j'ai fait dans le cadre du prototypage de l'application macOS [_ThreadSpace_](https://threadSpace.app), que je développe en solo. J'avais besoin de réaliser une maquette rapidement pour anticiper l'UX (l'expérience utilisateur) du logiciel. Figma Make ne me donnait pas les résultats attendus : il restait bloqué sur une approche _SaaS web_ (ces interfaces typiques des logiciels en ligne sur abonnement) avec un design cliché « fait par IA » qui ne me plaisait pas du tout.
+
+Je me suis alors tourné vers Claude Design à sa sortie. En quelques minutes et deux requêtes, le résultat était convaincant et fidèle à la description que j'avais fournie. Mais je ne pouvais pas l'affiner à ma guise sans épuiser mon quota de jetons pour rien.
+
+J'ai donc utilisé la fonctionnalité d'export au format HTML de Claude. Suite à cela, j'ai pu facilement convertir cette page web en maquette Figma grâce à un plugin tiers.
+
+Aujourd'hui, mon processus est rodé : je peaufine l'interface dans Figma, je prototype comme bon me semble, et quand je suis à court d'inspiration ou que je veux refondre une grande partie de l'application, je passe par Figma Make. Avec mon design source comme base et un prompt détaillé, l'outil d'Adobe dégrossit très bien le travail de refonte.
+
+## Épilogue
+
+C'est exactement ce que j'aime dans l'informatique et le numérique en général. Quand un outil ne correspond que partiellement à votre besoin, il y a toujours un moyen de combiner plusieurs solutions pour construire votre propre flux de travail (_workflow_). En tant que développeur, je peux même créer mes propres outils, comme _ThreadSpace_. Et si je n'ai pas le temps ou l'envie de développer ma propre solution, quelqu'un d'autre le fera peut-être un jour, et cela profitera au plus grand nombre.
+
+Sur ce, merci d'avoir lu jusqu'ici et à la prochaine dans un autre article.
+
+**Mathéo G**
