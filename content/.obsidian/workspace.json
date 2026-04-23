@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "blog/fr/02.mdx",
+                "file": "projects/fr/ThreadSpace.mdx",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "02"
+              "title": "ThreadSpace"
             }
           }
         ]
@@ -196,14 +196,15 @@
   },
   "active": "cb90ccfe4117118f",
   "lastOpenFiles": [
-    "blog/en/02.mdx",
+    "projects/en/ThreadSpace.mdx",
+    "projects/fr/ThreadSpace.mdx",
     "blog/fr/02.mdx",
+    "blog/en/02.mdx",
     "blog/fr/01-How-I-built-my-new-website-and-why.mdx",
     "blog/en/01-How-I-built-my-new-website-and-why.mdx",
     "blog/template.mdx",
     "projects/fr/MGDev.mdx",
     "projects/en/MGDev.mdx",
-    "projects/fr/Threadbase.mdx",
     "projects/fr/EverEastSolutions.mdx"
   ]
 }
