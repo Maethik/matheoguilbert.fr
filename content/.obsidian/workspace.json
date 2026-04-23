@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "projects/fr/ThreadSpace.mdx",
+                "file": "projects/fr/Thence.mdx",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "ThreadSpace"
+              "title": "Thence"
             }
           }
         ]
@@ -196,8 +196,8 @@
   },
   "active": "cb90ccfe4117118f",
   "lastOpenFiles": [
-    "projects/en/ThreadSpace.mdx",
-    "projects/fr/ThreadSpace.mdx",
+    "projects/en/Thence.mdx",
+    "projects/fr/Thence.mdx",
     "blog/fr/02.mdx",
     "blog/en/02.mdx",
     "blog/fr/01-How-I-built-my-new-website-and-why.mdx",
