@@ -1,5 +1,6 @@
 import { FiFacebook, FiInstagram, FiLinkedin, FiGithub } from "react-icons/fi";
 import { useTranslations } from "next-intl";
+import Link from "next/link";
 
 export default function Footer() {
     const t = useTranslations('footer');
@@ -30,10 +31,10 @@ export default function Footer() {
 
             {/* Links */}
             <div className="w-4/5 border-t border-brand-beige/20 pt-4 flex flex-row justify-center items-center gap-6 text-2xl">
-                <FiFacebook />
-                <FiInstagram />
-                <FiLinkedin />
-                <FiGithub />
+                {/* <Link href="" target="_blank"><FiFacebook /></Link> */}
+                {/* <Link href="" target="_blank"><FiInstagram /></Link> */}
+                <Link href="https://www.linkedin.com/in/math%C3%A9o-guilbert-26a209258/" target="_blank"><FiLinkedin /></Link>
+                <Link href="https://github.com/Maethik" target="_blank"><FiGithub /></Link>
             </div>
 
             <p className="text-brand-beige/70 font-sans text-sm">{t('copyright')}</p>

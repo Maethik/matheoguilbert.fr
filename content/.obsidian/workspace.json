@@ -4,21 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "1e867bda506e88c5",
+        "id": "ec0bbf655f2ec34e",
         "type": "tabs",
         "children": [
           {
-            "id": "cb90ccfe4117118f",
+            "id": "224cf476c7b474e6",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "projects/fr/Thence.mdx",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "Thence"
+              "title": "Nouvel onglet"
             }
           }
         ]
@@ -194,17 +190,18 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "cb90ccfe4117118f",
+  "active": "224cf476c7b474e6",
   "lastOpenFiles": [
-    "projects/en/Thence.mdx",
-    "projects/fr/Thence.mdx",
     "blog/fr/02.mdx",
     "blog/en/02.mdx",
+    "blog/fr/02-Claude-Design-vs-Figma-Make.mdx",
+    "blog/en/02-Claude-Design-vs-Figma-Make.mdx",
+    "projects/fr/Thence.mdx",
+    "projects/en/Thence.mdx",
     "blog/fr/01-How-I-built-my-new-website-and-why.mdx",
     "blog/en/01-How-I-built-my-new-website-and-why.mdx",
     "blog/template.mdx",
     "projects/fr/MGDev.mdx",
-    "projects/en/MGDev.mdx",
-    "projects/fr/EverEastSolutions.mdx"
+    "projects/en/MGDev.mdx"
   ]
 }
