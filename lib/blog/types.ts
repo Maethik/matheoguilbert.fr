@@ -1,5 +1,6 @@
 export type ArticleFrontmatter = {
     ready: boolean;
+    translationKey: string;
     title: string;
     description: string;
     date: string;

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { MDXRemote } from "next-mdx-remote/rsc";
-import { getArticleBySlug, getAllArticles } from "@/lib/blog/get-articles";
+import { getArticleBySlug, getAllArticles, getAlternatesArticle } from "@/lib/blog/get-articles";
 import { ArticleHero } from "@/components/sections/ArticleHero";
 import { ArticleSummary } from "@/components/sections/ArticleSummary";
 import { locales } from "@/middleware";
@@ -24,6 +24,14 @@ export async function generateMetadata({ params }: props): Promise<Metadata> {
         return {};
     }
 
+    const languageAlternates = getAlternatesArticle(article);
+    const absoluteLanguageAlternates = Object.fromEntries(
+        Object.entries(languageAlternates).map(([language, path]) => [
+            language,
+            `${siteUrl}${path}`,
+        ])
+    );
+
     const url = `${siteUrl}/${locale}/blog/${slug}`;
     const title = article.title;
     const description = article.description;
@@ -38,6 +46,10 @@ export async function generateMetadata({ params }: props): Promise<Metadata> {
         description,
         alternates: {
             canonical: url,
+            languages: {
+                ...absoluteLanguageAlternates,
+                "x-default": url,
+            },
         },
         openGraph: {
             title,

@@ -1,6 +1,8 @@
 import fs from "node:fs";
 import path from "node:path";
 import matter from "gray-matter";
+import { locales } from "@/middleware";
+
 import { Article, ArticleFrontmatter } from "./types";
 
 const CONTENT_DIR = path.join(process.cwd(), "content/blog");
@@ -41,4 +43,23 @@ export function getAllArticles(locale: string): Article[] {
         .map((slug) => getArticleBySlug(slug, locale))
         .filter((article): article is Article => article !== null && article.ready)
         .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+}
+
+export function getAlternatesArticle(article: Article) {
+    if (!article.translationKey) {
+        return {};
+    }
+
+    return locales.reduce<Record<string, string>>((acc, locale) => {
+        const translatedArticle = getAllArticles(locale).find(
+            (candidate) =>
+                candidate.translationKey === article.translationKey
+        );
+
+        if (translatedArticle) {
+            acc[locale] = `/${locale}/blog/${translatedArticle.slug}`;
+        }
+
+        return acc;
+    }, {});
 }
