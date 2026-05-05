@@ -1,6 +1,7 @@
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { MDXRemote } from "next-mdx-remote/rsc";
-import { getArticleBySlug, getArticleSlugs } from "@/lib/blog/get-articles";
+import { getArticleBySlug, getAllArticles } from "@/lib/blog/get-articles";
 import { ArticleHero } from "@/components/sections/ArticleHero";
 import { ArticleSummary } from "@/components/sections/ArticleSummary";
 import { locales } from "@/middleware";
@@ -13,12 +14,70 @@ type props = {
     }>;
 };
 
+const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL ?? "https://matheoguilbert.fr").replace(/\/$/, "");
+
+export async function generateMetadata({ params }: props): Promise<Metadata> {
+    const { locale, slug } = await params;
+    const article = getArticleBySlug(slug, locale);
+
+    if (!article || !article.ready) {
+        return {};
+    }
+
+    const url = `${siteUrl}/${locale}/blog/${slug}`;
+    const title = article.title;
+    const description = article.description;
+    const imageUrl = article.cover
+        ? article.cover.startsWith("http")
+            ? article.cover
+            : `${siteUrl}${article.cover}`
+        : `${siteUrl}/og-image.jpg`;
+
+    return {
+        title,
+        description,
+        alternates: {
+            canonical: url,
+        },
+        openGraph: {
+            title,
+            description,
+            url,
+            siteName: "Mathéo Guilbert",
+            type: "article",
+            locale,
+            publishedTime: article.date,
+            images: [
+                {
+                    url: imageUrl,
+                    width: 1200,
+                    height: 630,
+                    alt: title,
+                },
+            ],
+        },
+        twitter: {
+            card: "summary_large_image",
+            title,
+            description,
+            images: [imageUrl],
+        },
+        robots: {
+            index: true,
+            follow: true,
+        },
+    };
+}
+
 export function generateStaticParams() {
     const paths: { locale: string; slug: string }[] = [];
 
     locales.forEach((locale) => {
-        getArticleSlugs(locale).forEach((slug) => {
-            paths.push({ locale, slug });
+        getAllArticles(locale).forEach((article) => {
+            paths.push({
+                locale,
+                slug: article.slug,
+            });
         });
     });
 
