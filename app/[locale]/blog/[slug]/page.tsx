@@ -117,8 +117,47 @@ export default async function ArticlePage({ params }: props) {
         notFound();
     }
 
+    const articleUrl = `${siteUrl}/${locale}/blog/${slug}`;
+
+    const imageUrl = article.cover
+        ? article.cover.startsWith("http")
+            ? article.cover
+            : `${siteUrl}${article.cover}`
+        : `${siteUrl}/og-image.jpg`;
+
+    const jsonLd = {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        headline: article.title,
+        description: article.description,
+        image: imageUrl,
+        datePublished: article.date,
+        dateModified: article.date,
+        author: {
+            "@type": "Person",
+            name: "Mathéo Guilbert",
+            url: siteUrl,
+        },
+        publisher: {
+            "@type": "Person",
+            name: "Mathéo Guilbert",
+            url: siteUrl,
+        },
+        mainEntityOfPage: {
+            "@type": "WebPage",
+            "@id": articleUrl,
+        },
+    };
+
     return (
         <main className="bg-brand-beige">
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{
+                    __html: JSON.stringify(jsonLd),
+                }}
+            />
+            
             <ArticleHero
                 locale={locale}
                 title={article.title}
