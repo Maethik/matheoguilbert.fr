@@ -1,3 +1,4 @@
+import React from "react";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { MDXRemote } from "next-mdx-remote/rsc";
@@ -6,6 +7,7 @@ import { ArticleHero } from "@/components/sections/ArticleHero";
 import { ArticleSummary } from "@/components/sections/ArticleSummary";
 import { locales } from "@/middleware";
 import Link from "next/link";
+import { MermaidDiagram } from "@/components/mdx/MermaidDiagram";
 
 type props = {
     params: Promise<{
@@ -110,14 +112,25 @@ const mdxComponents = {
         }
 
         return (
-            <a 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                {...props} 
+            <a
+                target="_blank"
+                rel="noopener noreferrer"
+                {...props}
             >
                 {props.children}
             </a>
         );
+    },
+    pre: (props: React.ComponentPropsWithoutRef<"pre"> & { children?: React.ReactElement<{ className?: string; children?: React.ReactNode }> }) => {
+        const child = props.children;
+        const isMermaid = child?.props?.className?.includes("language-mermaid");
+
+        if (isMermaid && child) {
+            const code = String(child.props.children).trimEnd();
+            return <MermaidDiagram code={code} />;
+        }
+
+        return <pre {...props} />;
     },
 };
 
@@ -197,8 +210,9 @@ export default async function ArticlePage({ params }: props) {
                 )}
                 <article
                     className="
-                        flex flex-col gap-12
+                        flex flex-col gap-5
                         [&_h2]:font-serif [&_h2]:text-[clamp(40px,5vw,64px)] [&_h2]:text-brand-brown [&_h2]:leading-none [&_h2]:mb-6 [&_h2]:mt-2
+                        [&_h3]:font-serif [&_h3]:text-[clamp(24px,3vw,36px)] [&_h3]:text-brand-brown [&_h3]:leading-tight [&_h3]:mb-4 [&_h3]:mt-2
                         [&_p]:font-sans [&_p]:text-sm [&_p]:text-brand-brown/70 [&_p]:leading-[1.9]
                         [&_strong]:font-semibold [&_strong]:text-brand-brown/85
                         [&_a]:text-brand-brown [&_a]:underline 
