@@ -11,10 +11,14 @@
             "id": "224cf476c7b474e6",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "blog/fr/03-Deploying-an-infrastructure-for-a-macos-app-distribution.mdx",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "Nouvel onglet"
+              "title": "03-Deploying-an-infrastructure-for-a-macos-app-distribution"
             }
           }
         ]
@@ -192,8 +196,8 @@
   },
   "active": "224cf476c7b474e6",
   "lastOpenFiles": [
-    "blog/fr/03-Deploying-an-infrastructure-for-a-macos-app-distribution.mdx",
     "blog/en/03-Deploying-an-infrastructure-for-a-macos-app-distribution.mdx",
+    "blog/fr/03-Deploying-an-infrastructure-for-a-macos-app-distribution.mdx",
     "blog/fr/02-Claude-Design-vs-Figma-Make.mdx",
     "blog/fr/01-How-I-built-my-new-website-and-why.mdx",
     "blog/fr/02.mdx",
