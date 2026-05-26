@@ -20,12 +20,13 @@ export async function GET() {
         articles.forEach((article) => {
             feed.item({
                 title: article.title,
-                description: article.description,
+                description: article.description || '', 
                 url: `${siteUrl}/fr/blog/${article.slug}`,
                 guid: article.slug,
                 date: article.date,
                 custom_elements: [
-                    { 'meta_description': article.description }
+                    { 'meta_description': article.description || '' },
+                    { 'article_summary': article.summary || '' }
                 ],
             });
         });
