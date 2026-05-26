@@ -25,8 +25,7 @@ export async function GET() {
                 guid: article.slug,
                 date: article.date,
                 custom_elements: [
-                    { 'meta_description': article.description || '' },
-                    { 'article_summary': article.summary || '' }
+                    { 'full_text': article.content || '' }
                 ],
             });
         });
