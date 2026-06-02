@@ -25,3 +25,19 @@ export async function sendMail({ subject, html, from }: SendMailOptions) {
 
     return data;
 }
+
+export async function addContact(email: string) {
+    const audienceId = process.env.RESEND_AUDIENCE_ID;
+
+    if (!audienceId) throw new Error('RESEND_AUDIENCE_ID is not set');
+
+    const { data, error } = await resend.contacts.create({
+        email,
+        audienceId,
+        unsubscribed: false,
+    });
+
+    if (error) throw error;
+
+    return data;
+}
