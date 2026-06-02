@@ -1,7 +1,7 @@
-import HeroSection from "@/components/sections/HeroSection";
-import WorksSection from "@/components/sections/WorksSection";
-import ApproachSection from "@/components/sections/AppoachSection";
-import TimelineSection from "@/components/sections/AboutSection";
+import HeroSection from "@/app/[locale]/_components/HeroSection";
+import WorksSection from "@/app/[locale]/_components/WorksSection";
+import ApproachSection from "@/app/[locale]/_components/AppoachSection";
+import TimelineSection from "@/app/[locale]/_components/AboutSection";
 
 import { getAllProjects } from "@/lib/projects/get-projects";
 

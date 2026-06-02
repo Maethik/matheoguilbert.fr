@@ -1,6 +1,6 @@
 import { getAllArticles } from "@/lib/blog/get-articles";
-import { BlogHero } from "@/components/sections/BlogHero";
-import { ArticleList } from "@/components/sections/ArticleList";
+import { BlogHero } from "@/app/[locale]/blog/_components/BlogHero";
+import { ArticleList } from "@/app/[locale]/blog/[slug]/_components/ArticleList";
 
 type props = {
     params: Promise<{ locale: string }>;

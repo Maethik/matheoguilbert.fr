@@ -2,10 +2,10 @@ import { notFound } from "next/navigation";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import { getAllProjects, getProjectBySlug, getProjectSlugs } from "@/lib/projects/get-projects";
 import { mdxComponents } from "@/components/mdx/mdxComponents";
-import { ProjectHero } from "@/components/sections/ProjectHero";
-import { ProjectMeta } from "@/components/sections/ProjectMeta";
-import { ProjectTechnologies } from "@/components/sections/ProjectTechnologies";
-import { OtherProjects } from "@/components/sections/OtherProjects";
+import { ProjectHero } from "@/app/[locale]/works/_components/ProjectHero";
+import { ProjectMeta } from "@/app/[locale]/works/_components/ProjectMeta";
+import { ProjectTechnologies } from "@/app/[locale]/works/_components/ProjectTechnologies";
+import { OtherProjects } from "@/app/[locale]/works/_components/OtherProjects";
 
 type props = {
     params: Promise<{

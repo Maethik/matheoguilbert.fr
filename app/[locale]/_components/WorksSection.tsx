@@ -4,7 +4,7 @@ import { useRef, useEffect } from 'react';
 import { useTranslations } from "next-intl";
 
 import { Project } from "@/lib/projects/types";
-import { ProjectCard } from "../ui/ProjectCard";
+import { ProjectCard } from "../../../components/ui/ProjectCard";
 
 type props = {
     projects: Project[];
