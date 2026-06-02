@@ -8,7 +8,7 @@
     "hero": {
         "sectionLabel": "Full Stack Developer & Web Architect",
         "title": "Together, let's build something that lasts.",
-        "subtitle": "I design robust, scalable, and sustainable architectures—foundations that support your product’s growth over time.",
+        "subtitle": "I design robust, scalable, and sustainable architectures—foundations that support your product's growth over time.",
         "cta": "View my work",
         "scrollPrompt": "Scroll"
     },
@@ -28,11 +28,11 @@
         "sectionLabel": "Approach",
         "feature1": {
             "title": "More than just a doer",
-            "text": "Thanks to my background in digital and mobile design, I don’t just write code. I bring a critical and constructive perspective to every aspect of your project."
+            "text": "Thanks to my background in digital and mobile design, I don't just write code. I bring a critical and constructive perspective to every aspect of your project."
         },
         "feature2": {
             "title": "Concrete foundations",
-            "text": "My specialty is architecture. I build sustainable, scalable solutions that can accommodate your product’s growth over time."
+            "text": "My specialty is architecture. I build sustainable, scalable solutions that can accommodate your product's growth over time."
         },
         "feature3": {
             "title": "User-centered",
@@ -98,6 +98,80 @@
         },
         "visitButton": {
             "text": "Visit the website"
+        }
+    },
+    "freelancePage": {
+        "hero": {
+            "label": "Freelance — Custom web development",
+            "title": "Business software, websites, and custom web platforms.",
+            "subtitle": "I design clear, reliable, and scalable web solutions for businesses, independents, and project owners who need a specific challenge turned into a concrete tool.",
+            "cta1": "Discuss your project",
+            "cta2": "See examples",
+            "card1Label": "Business software",
+            "card2Label": "Professional websites",
+            "card3Label": "Web platforms"
+        },
+        "needs": {
+            "sectionLabel": "You need to…",
+            "item1Title": "Replace spreadsheets",
+            "item1Text": "Centralize your data in a clear, accessible tool.",
+            "item2Title": "Automate a process",
+            "item2Text": "Reduce repetitive tasks and manual errors.",
+            "item3Title": "Modernize your website",
+            "item3Text": "Present your business with a more professional image.",
+            "item4Title": "Create an online space",
+            "item4Text": "Let your clients, members, or teams access a service."
+        },
+        "services": {
+            "sectionLabel": "Services",
+            "idealLabel": "Ideal for",
+            "service1Title": "Custom business software",
+            "service1Desc": "To build a tool tailored to your way of working: internal tracking, request management, dashboards, client portals, automation, or admin interfaces.",
+            "service1Ideal": "SMEs, associations, internal teams, independents with specific processes.",
+            "service1Examples": "Lightweight CRM · Dashboard · Client portal · Back-office",
+            "service2Title": "Professional showcase websites",
+            "service2Desc": "To clearly present your business, reassure your visitors, and make it easy to get in touch — with a fast, responsive, and scalable website.",
+            "service2Ideal": "Freelancers, artisans, consultants, associations, small businesses.",
+            "service2Examples": "Business site · Redesign · Multilingual · SEO",
+            "service3Title": "Dynamic websites and web platforms",
+            "service3Desc": "For projects that require user accounts, manageable content, a database, advanced forms, or external integrations.",
+            "service3Ideal": "Project owners, startups, agencies, businesses with specific web needs.",
+            "service3Examples": "Authentication · CMS · API · Advanced forms"
+        },
+        "method": {
+            "sectionLabel": "A simple, structured approach",
+            "step1Title": "Understand",
+            "step1Text": "A conversation about your needs, constraints, and goals.",
+            "step2Title": "Frame",
+            "step2Text": "Define useful features, priorities, and scope.",
+            "step3Title": "Design",
+            "step3Text": "Screen structure, user flows, and technical choices.",
+            "step4Title": "Develop",
+            "step4Text": "Build the solution on a clean, maintainable, and scalable foundation.",
+            "step5Title": "Launch",
+            "step5Text": "Deployment, testing, adjustments, and ongoing support."
+        },
+        "works": {
+            "sectionLabel": "A few examples"
+        },
+        "why": {
+            "sectionLabel": "Why work with me?",
+            "intro": "I don't just produce pages or features. My role is to understand your need, structure a realistic solution, and build a reliable tool you can actually use.",
+            "arg1Title": "Product vision",
+            "arg1Text": "I help you clarify the need before building.",
+            "arg2Title": "Full stack profile",
+            "arg2Text": "UI, business logic, database, API, deployment.",
+            "arg3Title": "Durable solutions",
+            "arg3Text": "Maintainable code, clean structure, room to evolve.",
+            "arg4Title": "Clear communication",
+            "arg4Text": "Accessible explanations, even without a technical background."
+        },
+        "cta": {
+            "title": "You have a project or a specific need?",
+            "text": "Simply tell me what you'd like to build, improve, or automate. I'll help you figure out the best approach.",
+            "button": "Contact me",
+            "note1": "Response within a few days.",
+            "note2": "First conversation, no commitment."
         }
     }
 }

@@ -99,5 +99,79 @@
         "visitButton": {
             "text": "Visiter le site"
         }
+    },
+    "freelancePage": {
+        "hero": {
+            "label": "Freelance — Développement web sur mesure",
+            "title": "Logiciels métier, sites web et plateformes sur mesure.",
+            "subtitle": "Je conçois des solutions web claires, fiables et évolutives pour les entreprises, indépendants et porteurs de projets qui ont un besoin spécifique à transformer en outil concret.",
+            "cta1": "Discuter de votre projet",
+            "cta2": "Voir des exemples",
+            "card1Label": "Logiciels métier",
+            "card2Label": "Sites vitrines",
+            "card3Label": "Plateformes web"
+        },
+        "needs": {
+            "sectionLabel": "Vous avez besoin de…",
+            "item1Title": "Remplacer des fichiers Excel",
+            "item1Text": "Centraliser vos données dans un outil clair et accessible.",
+            "item2Title": "Automatiser un processus",
+            "item2Text": "Réduire les tâches répétitives et les erreurs manuelles.",
+            "item3Title": "Moderniser votre site",
+            "item3Text": "Présenter votre activité avec une image plus professionnelle.",
+            "item4Title": "Créer un espace en ligne",
+            "item4Text": "Permettre à vos clients, membres ou équipes d'accéder à un service."
+        },
+        "services": {
+            "sectionLabel": "Prestations",
+            "idealLabel": "Idéal pour",
+            "service1Title": "Logiciels métier sur mesure",
+            "service1Desc": "Pour créer un outil adapté à votre façon de travailler : suivi interne, gestion de demandes, tableau de bord, espace client, automatisation ou interface d'administration.",
+            "service1Ideal": "PME, associations, équipes internes, indépendants avec des processus spécifiques.",
+            "service1Examples": "CRM léger · Tableau de bord · Espace client · Back-office",
+            "service2Title": "Sites vitrines professionnels",
+            "service2Desc": "Pour présenter clairement votre activité, rassurer vos visiteurs et faciliter la prise de contact avec un site rapide, responsive et évolutif.",
+            "service2Ideal": "Indépendants, artisans, consultants, associations, petites entreprises.",
+            "service2Examples": "Site d'entreprise · Refonte · Multilingue · SEO",
+            "service3Title": "Sites dynamiques et plateformes web",
+            "service3Desc": "Pour les projets qui nécessitent des comptes utilisateurs, du contenu administrable, une base de données, des formulaires avancés ou des intégrations externes.",
+            "service3Ideal": "Porteurs de projets, startups, agences, entreprises avec un besoin web spécifique.",
+            "service3Examples": "Authentification · CMS · API · Formulaires avancés"
+        },
+        "method": {
+            "sectionLabel": "Une méthode simple et structurée",
+            "step1Title": "Comprendre",
+            "step1Text": "Échange autour de votre besoin, de vos contraintes et de vos objectifs.",
+            "step2Title": "Cadrer",
+            "step2Text": "Définition des fonctionnalités utiles, des priorités et du périmètre.",
+            "step3Title": "Concevoir",
+            "step3Text": "Structure des écrans, parcours utilisateurs et choix techniques.",
+            "step4Title": "Développer",
+            "step4Text": "Création de la solution avec une base propre, maintenable et évolutive.",
+            "step5Title": "Mettre en ligne",
+            "step5Text": "Déploiement, tests, ajustements et accompagnement."
+        },
+        "works": {
+            "sectionLabel": "Quelques exemples de réalisations"
+        },
+        "why": {
+            "sectionLabel": "Pourquoi travailler avec moi ?",
+            "intro": "Je ne me limite pas à produire des pages ou des fonctionnalités. Mon rôle est de comprendre votre besoin, de structurer une solution réaliste et de construire un outil fiable que vous pourrez réellement utiliser.",
+            "arg1Title": "Vision produit",
+            "arg1Text": "Je vous aide à clarifier le besoin avant de développer.",
+            "arg2Title": "Profil full stack",
+            "arg2Text": "Interface, logique métier, base de données, API, déploiement.",
+            "arg3Title": "Solutions durables",
+            "arg3Text": "Code maintenable, structure propre, évolution possible.",
+            "arg4Title": "Communication claire",
+            "arg4Text": "Explications accessibles, même sans profil technique."
+        },
+        "cta": {
+            "title": "Vous avez un projet ou un besoin spécifique ?",
+            "text": "Expliquez-moi simplement ce que vous souhaitez construire, améliorer ou automatiser. Je vous aiderai à clarifier la meilleure approche.",
+            "button": "Me contacter",
+            "note1": "Réponse sous quelques jours.",
+            "note2": "Premier échange sans engagement."
+        }
     }
 }
