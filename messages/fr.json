@@ -71,6 +71,11 @@
             "title": "Blog",
             "subtitle": "Pensées sur l'architecture, le développement web et les pratiques qui font durer les produits."
         },
+        "blogSubscription": {
+            "title": "Vous travaillez sur un projet ambitieux ?",
+            "text": "Je suis disponible pour des missions freelance — applications web, architecture et développement produit.",
+            "cta": "Voir mes services"
+        },
         "backToBlog": "Retour au blog",
         "scrollPrompt": "Défiler",
         "readArticle": "Lire l'article",

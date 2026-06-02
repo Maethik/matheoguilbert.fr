@@ -71,6 +71,11 @@
             "title": "Blog",
             "subtitle": "Thoughts on architecture, web development, and the practices that make products last."
         },
+        "blogSubscription": {
+            "title": "Working on something ambitious?",
+            "text": "I'm available for freelance projects — web apps, architecture, and product development.",
+            "cta": "See my services"
+        },
         "backToBlog": "Back to blog",
         "scrollPrompt": "Scroll",
         "readArticle": "Read article",
