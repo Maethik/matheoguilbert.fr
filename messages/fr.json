@@ -101,6 +101,18 @@
             "text": "Visiter le site"
         }
     },
+    "contactModal": {
+        "title": "Démarrons un projet",
+        "subtitle": "Je réponds sous 48h.",
+        "close": "Fermer",
+        "successTitle": "Message envoyé.",
+        "successText": "Je vous reviens très vite.",
+        "fieldName": "Nom",
+        "fieldEmail": "Email",
+        "fieldMessage": "Message",
+        "sending": "Envoi…",
+        "send": "Envoyer"
+    },
     "freelancePage": {
         "hero": {
             "label": "Freelance — Développement web sur mesure",

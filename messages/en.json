@@ -101,6 +101,18 @@
             "text": "Visit the website"
         }
     },
+    "contactModal": {
+        "title": "Let's start a project",
+        "subtitle": "I'll reply within 48 hours.",
+        "close": "Close",
+        "successTitle": "Message sent.",
+        "successText": "I'll get back to you very soon.",
+        "fieldName": "Name",
+        "fieldEmail": "Email",
+        "fieldMessage": "Message",
+        "sending": "Sending…",
+        "send": "Send"
+    },
     "freelancePage": {
         "hero": {
             "label": "Freelance — Custom web development",

@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState, useActionState } from 'react';
 import { createPortal } from 'react-dom';
+import { useTranslations } from 'next-intl';
 import { sendContactMail, type ContactFormState } from '@/app/actions/sendContactMail';
 
 type Props = {
@@ -48,6 +49,7 @@ function Field({ label, name, type = 'text', required, textarea, inputRef }: Fie
 }
 
 export function ContactFormModal({ isOpen, onClose }: Props) {
+    const t = useTranslations('contactModal');
     const [mounted, setMounted] = useState(false);
     const [state, action, pending] = useActionState<ContactFormState, FormData>(
         sendContactMail,
@@ -96,15 +98,15 @@ export function ContactFormModal({ isOpen, onClose }: Props) {
                 <div className="flex items-start justify-between gap-4">
                     <div>
                         <h2 className="font-serif text-brand-brown text-[clamp(1.3rem,2vw,1.65rem)] leading-tight">
-                            Démarrons un projet
+                            {t('title')}
                         </h2>
                         <p className="font-sans text-sm text-brand-brown/45 mt-1.5">
-                            Je réponds sous 48h.
+                            {t('subtitle')}
                         </p>
                     </div>
                     <button
                         onClick={onClose}
-                        aria-label="Fermer"
+                        aria-label={t('close')}
                         className="shrink-0 p-1.5 rounded-lg text-brand-brown/35 hover:text-brand-brown hover:bg-brand-brown/6 transition-colors duration-150 cursor-pointer"
                     >
                         <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -116,22 +118,22 @@ export function ContactFormModal({ isOpen, onClose }: Props) {
                 {/* Success */}
                 {state?.success ? (
                     <div className="flex flex-col items-center gap-3 py-10 text-center">
-                        <span className="font-serif text-brand-brown text-xl">Message envoyé.</span>
-                        <p className="font-sans text-sm text-brand-brown/45">Je vous reviens très vite.</p>
+                        <span className="font-serif text-brand-brown text-xl">{t('successTitle')}</span>
+                        <p className="font-sans text-sm text-brand-brown/45">{t('successText')}</p>
                         <button
                             onClick={onClose}
                             className="mt-4 font-sans text-xs uppercase tracking-[0.18em] text-brand-brown/40 hover:text-brand-brown border-b border-brand-brown/20 hover:border-brand-brown pb-0.5 transition-colors duration-150 cursor-pointer"
                         >
-                            Fermer
+                            {t('close')}
                         </button>
                     </div>
                 ) : (
                     <form ref={formRef} action={action} className="flex flex-col gap-5">
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                            <Field label="Nom" name="name" required inputRef={firstInputRef} />
-                            <Field label="Email" name="email" type="email" required />
+                            <Field label={t('fieldName')} name="name" required inputRef={firstInputRef} />
+                            <Field label={t('fieldEmail')} name="email" type="email" required />
                         </div>
-                        <Field label="Message" name="message" textarea required />
+                        <Field label={t('fieldMessage')} name="message" textarea required />
 
                         {state?.error && (
                             <p className="font-sans text-xs text-red-700/80">{state.error}</p>
@@ -143,7 +145,7 @@ export function ContactFormModal({ isOpen, onClose }: Props) {
                                 disabled={pending}
                                 className="inline-flex items-center gap-2.5 font-sans text-[13px] tracking-wide text-brand-beige bg-brand-brown rounded-lg px-7 py-3 hover:bg-brand-brown/85 disabled:opacity-50 transition-colors duration-200 cursor-pointer disabled:cursor-default"
                             >
-                                {pending ? 'Envoi…' : 'Envoyer'}
+                                {pending ? t('sending') : t('send')}
                                 {!pending && (
                                     <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
