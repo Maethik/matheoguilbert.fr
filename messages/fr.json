@@ -19,6 +19,11 @@
     "projectCard": {
         "cta": "Lire plus"
     },
+    "homePageFreelanceSection": {
+        "title": "Vous avez un projet à concrétiser ?",
+        "text": "Je concoit des applications web, logiciels métier et sites profressionnels sûr mesure, pensés pour être ergonomique, fiable et évolutif.",
+        "cta": "Découvrir mon offre freelance"
+    },
     "approach": {
         "sectionLabel": "Approche",
         "feature1": {

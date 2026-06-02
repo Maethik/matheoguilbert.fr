@@ -19,6 +19,11 @@
     "projectCard": {
         "cta": "Read more"
     },
+    "homePageFreelanceSection": {
+        "title": "You have a project you want to bring to life?",
+        "text": "I design custom web applications, business software, and professional websites that are user-friendly, reliable, and scalable.",
+        "cta": "Learn more about my freelance services"
+    },
     "approach": {
         "sectionLabel": "Approach",
         "feature1": {

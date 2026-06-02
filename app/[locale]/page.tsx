@@ -2,6 +2,7 @@ import HeroSection from "@/app/[locale]/_components/HeroSection";
 import WorksSection from "@/app/[locale]/_components/WorksSection";
 import ApproachSection from "@/app/[locale]/_components/AppoachSection";
 import TimelineSection from "@/app/[locale]/_components/AboutSection";
+import FreelanceSection from "@/app/[locale]/_components/FreelanceSection";
 
 import { getAllProjects } from "@/lib/projects/get-projects";
 
@@ -20,6 +21,7 @@ export default async function Home({ params }: props) {
 			<HeroSection />
 			<div className="px-8 md:px-14 lg:px-20">
 				<WorksSection projects={projects} locale={locale} />
+				<FreelanceSection locale={locale} />
 				<ApproachSection />
 				<TimelineSection />
 			</div>
