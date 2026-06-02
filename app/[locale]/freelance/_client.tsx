@@ -110,17 +110,16 @@ export default function FreelanceClient({ projects, locale }: props) {
             >
                 <div className="shrink-0" style={{ height: 'clamp(120px, 15vh, 160px)' }} />
 
-                <div className="flex flex-col lg:flex-row flex-1 items-center px-8 md:px-14 lg:px-20 gap-12 lg:gap-0">
+                <div className="flex flex-col lg:flex-row flex-1 items-center px-8 md:px-14 lg:px-20 gap-16 lg:gap-0">
 
                     {/* Left — text */}
-                    <div className="flex flex-col justify-center lg:w-[55%] lg:pr-16 gap-8 lg:gap-10">
+                    <div className="flex flex-col justify-center lg:w-[55%] lg:pr-20 gap-10 lg:gap-12">
 
                         <div
                             className="hero-reveal"
                             style={{ opacity: 0, transform: 'translateY(28px)', transition: 'opacity 700ms cubic-bezier(0.22,1,0.36,1), transform 700ms cubic-bezier(0.22,1,0.36,1)' }}
                         >
-                            <span className="inline-flex items-center gap-2 font-sans text-xs uppercase tracking-[0.2em] text-brand-beige/50">
-                                <span className="w-6 h-px bg-brand-beige/30" />
+                            <span className="font-sans text-[11px] uppercase tracking-[0.25em] text-brand-beige/40">
                                 {t('hero.label')}
                             </span>
                         </div>
@@ -129,7 +128,7 @@ export default function FreelanceClient({ projects, locale }: props) {
                             className="hero-reveal"
                             style={{ opacity: 0, transform: 'translateY(28px)', transition: 'opacity 700ms cubic-bezier(0.22,1,0.36,1), transform 700ms cubic-bezier(0.22,1,0.36,1)' }}
                         >
-                            <h1 className="font-serif leading-none text-[clamp(28px,4vw,64px)] text-brand-beige">
+                            <h1 className="font-serif leading-[0.95] text-[clamp(36px,5.5vw,80px)] text-brand-beige">
                                 {t('hero.title')}
                             </h1>
                         </div>
@@ -138,48 +137,48 @@ export default function FreelanceClient({ projects, locale }: props) {
                             className="hero-reveal"
                             style={{ opacity: 0, transform: 'translateY(28px)', transition: 'opacity 700ms cubic-bezier(0.22,1,0.36,1), transform 700ms cubic-bezier(0.22,1,0.36,1)' }}
                         >
-                            <p className="font-sans text-base font-light text-brand-beige/60 max-w-md leading-relaxed">
+                            <p className="font-sans text-[15px] font-light text-brand-beige/55 max-w-sm leading-[1.75]">
                                 {t('hero.subtitle')}
                             </p>
                         </div>
 
                         <div
-                            className="hero-reveal flex flex-col sm:flex-row gap-4"
+                            className="hero-reveal flex flex-col sm:flex-row gap-5"
                             style={{ opacity: 0, transform: 'translateY(28px)', transition: 'opacity 700ms cubic-bezier(0.22,1,0.36,1), transform 700ms cubic-bezier(0.22,1,0.36,1)' }}
                         >
                             <a
                                 href="mailto:matheo.guilbert49@gmail.com?subject=Projet freelance"
-                                className="inline-flex items-center justify-center gap-2 font-sans text-sm text-brand-beige border border-brand-beige/40 rounded-lg px-6 py-3 hover:bg-brand-beige/10 transition-all duration-200"
+                                className="inline-flex items-center justify-center gap-2 font-sans text-[13px] tracking-wide text-brand-brown bg-brand-beige rounded-lg px-7 py-3.5 hover:bg-brand-beige/90 transition-colors duration-200 cursor-pointer"
                             >
                                 {t('hero.cta1')}
                             </a>
                             <button
                                 onClick={() => document.getElementById('works')?.scrollIntoView({ behavior: 'smooth' })}
-                                className="group inline-flex items-center gap-2 font-sans text-sm text-brand-beige/70 hover:text-brand-beige transition-colors duration-200"
+                                className="group inline-flex items-center gap-2 font-sans text-[13px] text-brand-beige/45 hover:text-brand-beige transition-colors duration-200 cursor-pointer"
                             >
                                 <span className="relative">
                                     {t('hero.cta2')}
-                                    <span className="absolute bottom-0 left-0 w-full h-px bg-brand-beige/40 origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300" />
+                                    <span className="absolute bottom-0 left-0 w-full h-px bg-brand-beige/30 origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300" />
                                 </span>
-                                <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <svg className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                                 </svg>
                             </button>
                         </div>
                     </div>
 
-                    {/* Right — service preview cards */}
+                    {/* Right — service list, editorial style */}
                     <div
-                        className="hero-reveal flex flex-col gap-3 lg:w-[45%] lg:pl-12 w-full"
+                        className="hero-reveal lg:w-[45%] lg:pl-16 w-full border-t border-brand-beige/10"
                         style={{ opacity: 0, transform: 'translateY(28px)', transition: 'opacity 900ms cubic-bezier(0.22,1,0.36,1), transform 900ms cubic-bezier(0.22,1,0.36,1)' }}
                     >
                         {heroCards.map((card, i) => (
                             <div
                                 key={i}
-                                className="flex items-center gap-5 border border-brand-beige/10 rounded-2xl px-6 py-5 bg-brand-beige/5 hover:bg-brand-beige/8 transition-colors duration-300 cursor-default"
+                                className="flex items-baseline gap-6 py-5 border-b border-brand-beige/10"
                             >
-                                <span className="font-sans text-xs text-brand-beige/25 tracking-widest shrink-0">{card.num}</span>
-                                <span className="font-serif text-brand-beige text-[clamp(1rem,1.8vw,1.35rem)] leading-tight">{card.label}</span>
+                                <span className="font-sans text-[10px] text-brand-beige/20 tracking-widest shrink-0 w-6">{card.num}</span>
+                                <span className="font-serif text-brand-beige text-[clamp(1rem,1.6vw,1.25rem)] leading-snug">{card.label}</span>
                             </div>
                         ))}
                     </div>
@@ -193,67 +192,78 @@ export default function FreelanceClient({ projects, locale }: props) {
 
                 {/* ── Needs ── */}
                 <section data-reveal-section className="w-full py-24 md:py-36">
-                    <div className="reveal flex items-center gap-3 mb-12 md:mb-16">
-                        <span className="w-8 h-px bg-brand-brown/40" />
-                        <span className="font-sans text-[11px] uppercase tracking-[0.2em] text-brand-brown/45">
+                    <div className="reveal flex items-center gap-6 mb-16 md:mb-20">
+                        <span className="font-sans text-[10px] uppercase tracking-[0.25em] text-brand-brown/35 shrink-0">
                             {t('needs.sectionLabel')}
                         </span>
+                        <span className="flex-1 h-px bg-brand-brown/10" />
                     </div>
 
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
+                    {/* Grid "mortier" — les lignes de séparation sont le fond du container */}
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-px bg-brand-brown/10">
                         {needs.map((item, i) => (
                             <div
                                 key={i}
-                                className="reveal flex flex-col gap-4 p-7 rounded-2xl border border-brand-brown/8 bg-white/40 hover:bg-white/70 hover:border-brand-brown/15 transition-all duration-300 cursor-default"
+                                className="reveal flex flex-col gap-5 p-8 md:p-10 bg-brand-beige hover:bg-white/80 transition-colors duration-300 cursor-default"
                                 style={{ transitionDelay: `${i * 80}ms` }}
                             >
-                                <span className="font-sans text-xs text-brand-brown/25 tracking-[0.2em]">
+                                <span className="font-sans text-[10px] text-brand-brown/20 tracking-[0.25em]">
                                     {String(i + 1).padStart(2, '0')}
                                 </span>
-                                <div>
-                                    <h3 className="font-serif text-brand-brown text-[clamp(1.15rem,1.8vw,1.45rem)] leading-snug mb-2">
-                                        {item.title}
-                                    </h3>
-                                    <p className="font-sans text-sm text-brand-brown/60 leading-relaxed">
-                                        {item.text}
-                                    </p>
-                                </div>
+                                <h3 className="font-serif text-brand-brown text-[clamp(1.2rem,1.8vw,1.5rem)] leading-snug">
+                                    {item.title}
+                                </h3>
+                                <p className="font-sans text-sm text-brand-brown/55 leading-[1.75]">
+                                    {item.text}
+                                </p>
                             </div>
                         ))}
                     </div>
                 </section>
 
-                {/* ── Services — catalog grid ── */}
+                {/* ── Services — catalogue ── */}
                 <section data-reveal-section className="w-full py-24 md:py-36 border-t border-brand-brown/8">
-                    <div className="reveal flex items-center gap-3 mb-12 md:mb-16">
-                        <span className="w-8 h-px bg-brand-brown/40" />
-                        <span className="font-sans text-[11px] uppercase tracking-[0.2em] text-brand-brown/45">
+                    <div className="reveal flex items-center gap-6 mb-16 md:mb-20">
+                        <span className="font-sans text-[10px] uppercase tracking-[0.25em] text-brand-brown/35 shrink-0">
                             {t('services.sectionLabel')}
                         </span>
+                        <span className="flex-1 h-px bg-brand-brown/10" />
                     </div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-brand-brown/10">
                         {services.map((service, i) => (
                             <div
                                 key={i}
-                                className="reveal flex flex-col gap-5 p-8 rounded-2xl border border-brand-brown/8 bg-white/40 hover:bg-white/70 hover:border-brand-brown/15 transition-all duration-300 cursor-default"
+                                className="reveal flex flex-col bg-brand-beige hover:bg-white/80 transition-colors duration-300 cursor-default group"
                                 style={{ transitionDelay: `${i * 100}ms` }}
                             >
-                                <span className="font-sans text-xs text-brand-brown/25 tracking-[0.2em]">
-                                    {String(i + 1).padStart(2, '0')}
-                                </span>
-                                <h3 className="font-serif text-brand-brown text-[clamp(1.2rem,1.8vw,1.55rem)] leading-tight">
-                                    {service.title}
-                                </h3>
-                                <p className="font-sans text-sm text-brand-brown/70 leading-relaxed flex-1">
-                                    {service.desc}
-                                </p>
-                                <div className="border-t border-brand-brown/8 pt-5 flex flex-col gap-3">
+                                {/* En-tête catalogue */}
+                                <div className="flex items-baseline justify-between px-7 pt-7 pb-5 border-b border-brand-brown/8">
+                                    <span className="font-sans text-[10px] text-brand-brown/20 tracking-[0.25em]">
+                                        {String(i + 1).padStart(2, '0')}
+                                    </span>
+                                    <span className="font-sans text-[10px] uppercase tracking-[0.18em] text-brand-brown/25">
+                                        {t('services.sectionLabel')}
+                                    </span>
+                                </div>
+
+                                {/* Corps */}
+                                <div className="flex flex-col gap-5 px-7 py-6 flex-1">
+                                    <h3 className="font-serif text-brand-brown text-[clamp(1.25rem,1.8vw,1.6rem)] leading-tight group-hover:text-brand-accent transition-colors duration-300">
+                                        {service.title}
+                                    </h3>
+                                    <p className="font-sans text-sm text-brand-brown/60 leading-[1.8] flex-1">
+                                        {service.desc}
+                                    </p>
+                                </div>
+
+                                {/* Pied catalogue */}
+                                <div className="px-7 pb-7 pt-5 border-t border-brand-brown/8 flex flex-col gap-4">
                                     <div>
-                                        <span className="font-sans text-[11px] uppercase tracking-[0.15em] text-brand-brown/40">
+                                        <span className="font-sans text-[10px] uppercase tracking-[0.2em] text-brand-brown/30">
                                             {t('services.idealLabel')}
                                         </span>
-                                        <p className="font-sans text-sm text-brand-brown/60 mt-1 leading-relaxed">
+                                        <p className="font-sans text-[13px] text-brand-brown/50 mt-1.5 leading-relaxed">
                                             {service.ideal}
                                         </p>
                                     </div>
@@ -261,7 +271,7 @@ export default function FreelanceClient({ projects, locale }: props) {
                                         {service.examples.map((ex, j) => (
                                             <span
                                                 key={j}
-                                                className="font-sans text-xs text-brand-brown/50 border border-brand-brown/10 rounded-full px-3 py-1 bg-brand-brown/5"
+                                                className="font-sans text-[11px] text-brand-brown/40 border border-brand-brown/12 rounded-full px-2.5 py-0.5"
                                             >
                                                 {ex}
                                             </span>
@@ -273,29 +283,29 @@ export default function FreelanceClient({ projects, locale }: props) {
                     </div>
                 </section>
 
-                {/* ── Method — card grid ── */}
+                {/* ── Method — liste structurée ── */}
                 <section data-reveal-section className="w-full py-24 md:py-36 border-t border-brand-brown/8">
-                    <div className="reveal flex items-center gap-3 mb-12 md:mb-16">
-                        <span className="w-8 h-px bg-brand-brown/40" />
-                        <span className="font-sans text-[11px] uppercase tracking-[0.2em] text-brand-brown/45">
+                    <div className="reveal flex items-center gap-6 mb-16 md:mb-20">
+                        <span className="font-sans text-[10px] uppercase tracking-[0.25em] text-brand-brown/35 shrink-0">
                             {t('method.sectionLabel')}
                         </span>
+                        <span className="flex-1 h-px bg-brand-brown/10" />
                     </div>
 
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+                    <div className="flex flex-col">
                         {methodSteps.map((step, i) => (
                             <div
                                 key={i}
-                                className="reveal flex flex-col gap-4 p-6 rounded-2xl border border-brand-brown/8 bg-white/40 hover:bg-white/70 hover:border-brand-brown/15 transition-all duration-300 cursor-default"
+                                className="reveal grid grid-cols-[40px_1fr] lg:grid-cols-[64px_1fr_2fr] items-start gap-x-8 gap-y-1.5 py-8 border-b border-brand-brown/8 last:border-b-0 cursor-default"
                                 style={{ transitionDelay: `${i * 80}ms` }}
                             >
-                                <span className="font-sans text-xs text-brand-brown/25 tracking-[0.2em]">
+                                <span className="font-sans text-[11px] text-brand-brown/20 tracking-widest pt-0.5">
                                     {String(i + 1).padStart(2, '0')}
                                 </span>
-                                <h3 className="font-serif text-brand-brown text-[clamp(1.1rem,1.4vw,1.25rem)] leading-tight">
+                                <h3 className="font-serif text-brand-brown text-[clamp(1.05rem,1.4vw,1.2rem)] leading-snug">
                                     {step.title}
                                 </h3>
-                                <p className="font-sans text-sm text-brand-brown/60 leading-relaxed">
+                                <p className="font-sans text-sm text-brand-brown/55 leading-[1.75] col-start-2 lg:col-start-3 lg:row-start-1">
                                     {step.text}
                                 </p>
                             </div>
@@ -303,14 +313,14 @@ export default function FreelanceClient({ projects, locale }: props) {
                     </div>
                 </section>
 
-                {/* ── Works — project cards ── */}
+                {/* ── Works ── */}
                 <section id="works" className="w-full py-24 md:py-36 border-t border-brand-brown/8">
                     <div data-reveal-section className="mb-12 md:mb-16">
-                        <div className="reveal flex items-center gap-3">
-                            <span className="w-8 h-px bg-brand-brown/40" />
-                            <span className="font-sans text-[11px] uppercase tracking-[0.2em] text-brand-brown/45">
+                        <div className="reveal flex items-center gap-6">
+                            <span className="font-sans text-[10px] uppercase tracking-[0.25em] text-brand-brown/35 shrink-0">
                                 {t('works.sectionLabel')}
                             </span>
+                            <span className="flex-1 h-px bg-brand-brown/10" />
                         </div>
                     </div>
 
@@ -327,30 +337,29 @@ export default function FreelanceClient({ projects, locale }: props) {
 
                 {/* ── Why ── */}
                 <section data-reveal-section className="w-full py-24 md:py-36 border-t border-brand-brown/8">
-                    <div className="reveal flex items-center gap-3 mb-12 md:mb-16">
-                        <span className="w-8 h-px bg-brand-brown/40" />
-                        <span className="font-sans text-[11px] uppercase tracking-[0.2em] text-brand-brown/45">
+                    <div className="reveal flex items-center gap-6 mb-16 md:mb-20">
+                        <span className="font-sans text-[10px] uppercase tracking-[0.25em] text-brand-brown/35 shrink-0">
                             {t('why.sectionLabel')}
                         </span>
+                        <span className="flex-1 h-px bg-brand-brown/10" />
                     </div>
 
-                    <div className="flex flex-col lg:flex-row gap-12 lg:gap-20">
-                        {/* Left — intro text */}
+                    <div className="flex flex-col lg:flex-row gap-16 lg:gap-24">
                         <div className="reveal lg:w-2/5">
-                            <p className="font-sans text-base text-brand-brown/70 leading-relaxed">
+                            <p className="font-sans text-base text-brand-brown/65 leading-[1.85]">
                                 {t('why.intro')}
                             </p>
                         </div>
-                        {/* Right — 2×2 arguments */}
-                        <div className="lg:w-3/5 grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        {/* Grille "mortier" identique à Needs */}
+                        <div className="lg:w-3/5 grid grid-cols-1 sm:grid-cols-2 gap-px bg-brand-brown/10">
                             {whyArgs.map((arg, i) => (
                                 <div
                                     key={i}
-                                    className="reveal flex flex-col gap-3 p-6 rounded-2xl border border-brand-brown/8 bg-white/40 hover:bg-white/70 hover:border-brand-brown/15 transition-all duration-300 cursor-default"
+                                    className="reveal flex flex-col gap-3 p-7 bg-brand-beige hover:bg-white/80 transition-colors duration-300 cursor-default"
                                     style={{ transitionDelay: `${i * 80}ms` }}
                                 >
-                                    <h4 className="font-serif text-brand-brown text-lg leading-tight">{arg.title}</h4>
-                                    <p className="font-sans text-sm text-brand-brown/60 leading-relaxed">{arg.text}</p>
+                                    <h4 className="font-serif text-brand-brown text-[1.05rem] leading-snug">{arg.title}</h4>
+                                    <p className="font-sans text-sm text-brand-brown/55 leading-[1.7]">{arg.text}</p>
                                 </div>
                             ))}
                         </div>
@@ -360,26 +369,26 @@ export default function FreelanceClient({ projects, locale }: props) {
                 {/* ── CTA final ── */}
                 <section data-reveal-section className="w-full py-24 md:py-36 border-t border-brand-brown/8">
                     <div className="flex justify-center">
-                        <div className="reveal w-full max-w-2xl flex flex-col items-center text-center gap-8 p-10 md:p-14 rounded-2xl border border-brand-brown/8 bg-white/40">
-                            <h2 className="font-serif text-brand-brown text-[clamp(1.5rem,2.8vw,2.2rem)] leading-tight">
+                        <div className="reveal w-full max-w-2xl flex flex-col items-center text-center gap-10 p-10 md:p-14 rounded-2xl border border-brand-brown/8 bg-white/40">
+                            <h2 className="font-serif text-brand-brown text-[clamp(1.5rem,2.8vw,2.2rem)] leading-[1.15]">
                                 {t('cta.title')}
                             </h2>
-                            <p className="font-sans text-sm text-brand-brown/60 leading-relaxed max-w-md">
+                            <p className="font-sans text-sm text-brand-brown/55 leading-[1.8] max-w-md">
                                 {t('cta.text')}
                             </p>
-                            <div className="flex flex-col items-center gap-4">
+                            <div className="flex flex-col items-center gap-5">
                                 <a
                                     href="mailto:matheo.guilbert49@gmail.com?subject=Projet freelance"
-                                    className="inline-flex items-center gap-2 font-sans text-sm text-brand-beige bg-brand-brown rounded-lg px-8 py-3.5 hover:bg-brand-brown/90 transition-colors duration-200"
+                                    className="inline-flex items-center gap-2.5 font-sans text-[13px] tracking-wide text-brand-beige bg-brand-brown rounded-lg px-8 py-3.5 hover:bg-brand-brown/85 transition-colors duration-200 cursor-pointer"
                                 >
                                     {t('cta.button')}
-                                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                    <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                                     </svg>
                                 </a>
-                                <div className="flex flex-col gap-1">
-                                    <span className="font-sans text-xs text-brand-brown/40">{t('cta.note1')}</span>
-                                    <span className="font-sans text-xs text-brand-brown/40">{t('cta.note2')}</span>
+                                <div className="flex flex-col gap-1.5">
+                                    <span className="font-sans text-xs text-brand-brown/35">{t('cta.note1')}</span>
+                                    <span className="font-sans text-xs text-brand-brown/35">{t('cta.note2')}</span>
                                 </div>
                             </div>
                         </div>
