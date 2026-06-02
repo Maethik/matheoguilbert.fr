@@ -1,8 +1,9 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useTranslations } from 'next-intl';
 import { ProjectCard } from '@/components/ui/ProjectCard';
+import { ContactFormModal } from '@/components/ui/ContactFormModal';
 import { Project } from '@/lib/projects/types';
 
 type props = {
@@ -12,6 +13,8 @@ type props = {
 
 export default function FreelanceClient({ projects, locale }: props) {
     const t = useTranslations('freelancePage');
+
+    const [contactOpen, setContactOpen] = useState(false);
 
     const heroRef = useRef<HTMLElement>(null);
     const belowFoldRef = useRef<HTMLDivElement>(null);
@@ -102,6 +105,7 @@ export default function FreelanceClient({ projects, locale }: props) {
 
     return (
         <main className="bg-brand-beige text-brand-brown flex flex-col">
+            <ContactFormModal isOpen={contactOpen} onClose={() => setContactOpen(false)} />
 
             {/* ── Hero ── */}
             <section
@@ -146,12 +150,12 @@ export default function FreelanceClient({ projects, locale }: props) {
                             className="hero-reveal flex flex-col sm:flex-row gap-5"
                             style={{ opacity: 0, transform: 'translateY(28px)', transition: 'opacity 700ms cubic-bezier(0.22,1,0.36,1), transform 700ms cubic-bezier(0.22,1,0.36,1)' }}
                         >
-                            <a
-                                href="mailto:matheo.guilbert49@gmail.com?subject=Projet freelance"
+                            <button
+                                onClick={() => setContactOpen(true)}
                                 className="inline-flex items-center justify-center gap-2 font-sans text-[13px] tracking-wide text-brand-brown bg-brand-beige rounded-lg px-7 py-3.5 hover:bg-brand-beige/90 transition-colors duration-200 cursor-pointer"
                             >
                                 {t('hero.cta1')}
-                            </a>
+                            </button>
                             <button
                                 onClick={() => document.getElementById('works')?.scrollIntoView({ behavior: 'smooth' })}
                                 className="group inline-flex items-center gap-2 font-sans text-[13px] text-brand-beige/45 hover:text-brand-beige transition-colors duration-200 cursor-pointer"
@@ -377,15 +381,15 @@ export default function FreelanceClient({ projects, locale }: props) {
                                 {t('cta.text')}
                             </p>
                             <div className="flex flex-col items-center gap-5">
-                                <a
-                                    href="mailto:matheo.guilbert49@gmail.com?subject=Projet freelance"
+                                <button
+                                    onClick={() => setContactOpen(true)}
                                     className="inline-flex items-center gap-2.5 font-sans text-[13px] tracking-wide text-brand-beige bg-brand-brown rounded-lg px-8 py-3.5 hover:bg-brand-brown/85 transition-colors duration-200 cursor-pointer"
                                 >
                                     {t('cta.button')}
                                     <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                                     </svg>
-                                </a>
+                                </button>
                                 <div className="flex flex-col gap-1.5">
                                     <span className="font-sans text-xs text-brand-brown/35">{t('cta.note1')}</span>
                                     <span className="font-sans text-xs text-brand-brown/35">{t('cta.note2')}</span>
