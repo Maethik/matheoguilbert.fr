@@ -1,6 +1,7 @@
 {
     "header": {
         "home": "Accueil",
+        "freelance": "Freelance",
         "works": "Travaux",
         "about": "À propos",
         "blog": "Blog"
@@ -20,7 +21,7 @@
         "cta": "Lire plus"
     },
     "homePageFreelanceSection": {
-        "title": "Vous avez un projet à concrétiser ?",
+        "title": "Vous avez un projet ou un besoin spécifique ?",
         "text": "Je concoit des applications web, logiciels métier et sites profressionnels sûr mesure, pensés pour être ergonomique, fiable et évolutif.",
         "cta": "Découvrir mon offre freelance"
     },

@@ -19,7 +19,7 @@ export default function Header() {
     const links = [
         { text: t('home'), target: `${homePath}#home` },
         { text: t('works'), target: `${homePath}#works` },
-        { text: t('about'), target: `${homePath}#about` },
+        { text: t('freelance'), target: `${homePath}/freelance` },
         { text: t('blog'), target: `${homePath}/blog` },
     ];
 

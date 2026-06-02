@@ -1,6 +1,7 @@
 {
     "header": {
         "home": "Home",
+        "freelance": "Freelance",
         "works": "Works",
         "about": "About",
         "blog": "Blog"
@@ -20,7 +21,7 @@
         "cta": "Read more"
     },
     "homePageFreelanceSection": {
-        "title": "You have a project you want to bring to life?",
+        "title": "You have a project or a specific need?",
         "text": "I design custom web applications, business software, and professional websites that are user-friendly, reliable, and scalable.",
         "cta": "Learn more about my freelance services"
     },

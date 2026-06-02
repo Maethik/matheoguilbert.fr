@@ -35,9 +35,9 @@ export default function FreelanceSection({ locale }: props) {
     }, []);
 
     return (
-        <div ref={sectionRef} className="w-full flex justify-center items-center">
+        <div ref={sectionRef} className="w-full flex justify-center items-center pt-24 md:pt-36">
             <div
-                className="w-2/3 reveal flex flex-col items-start gap-6 p-8 rounded-2xl border border-brand-brown/8 bg-white/40 transition-all duration-300 cursor-default"
+                className="w-full max-w-2xl reveal flex flex-col items-start gap-8 p-10 md:p-14 rounded-2xl border border-brand-brown/8 bg-white/40 transition-all duration-300 cursor-default"
                 style={{ transitionDelay: `120ms` }}
             >
                 <div>
