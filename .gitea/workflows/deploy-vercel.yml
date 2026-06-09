@@ -30,6 +30,7 @@ jobs:
   #     - name: Test
   #       run: npm test --if-present
 
+
   deploy-preprod:
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/dev'
@@ -43,26 +44,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup Node
-        uses: actions/setup-node@v4
-        with:
-          node-version: 20
-          cache: npm
-
-      - name: Install
-        run: npm ci
-
-      - name: Install Vercel CLI
-        run: npm install -g vercel
-
-      - name: Pull Vercel environment
-        run: vercel pull --yes --environment=preview
-
-      - name: Build for preprod
-        run: vercel build
-
       - name: Deploy preprod
-        run: vercel deploy --prebuilt --archive=tgz
+        run: npx vercel@latest deploy --yes
+
 
   deploy-production:
     runs-on: ubuntu-latest
@@ -77,23 +61,5 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup Node
-        uses: actions/setup-node@v4
-        with:
-          node-version: 20
-          cache: npm
-
-      - name: Install
-        run: npm ci
-
-      - name: Install Vercel CLI
-        run: npm install -g vercel
-
-      - name: Pull Vercel production environment
-        run: vercel pull --yes --environment=production
-
-      - name: Build for production
-        run: vercel build --prod
-
       - name: Deploy production
-        run: vercel deploy --prebuilt --prod --archive=tgz
+        run: npx vercel@latest deploy --prod --yes
