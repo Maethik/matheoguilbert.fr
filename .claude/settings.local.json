@@ -12,7 +12,9 @@
       "Bash(Get-ChildItem -Path \"d:\\\\2 - Projets\\\\matheoguilbert.fr\" -Recurse -Depth 2)",
       "Bash(Select-Object -First 50)",
       "Bash(Format-Table FullName)",
-      "PowerShell(Get-ChildItem -Path \"d:\\\\2 - Projets\\\\matheoguilbert.fr\" -Recurse -Depth 2 | Select-Object -ExpandProperty FullName | Where-Object { $_ -notmatch 'node_modules|\\\\.next' } | Select-Object -First 80)"
+      "PowerShell(Get-ChildItem -Path \"d:\\\\2 - Projets\\\\matheoguilbert.fr\" -Recurse -Depth 2 | Select-Object -ExpandProperty FullName | Where-Object { $_ -notmatch 'node_modules|\\\\.next' } | Select-Object -First 80)",
+      "Bash(grep -o '<pre[^>]*>.\\\\{0,200\\\\}' /tmp/page.html | head -20; echo \"---mermaid---\"; grep -o 'mermaid' /tmp/page.html | head -5; echo \"---count pre---\"; grep -o '<pre' /tmp/page.html | wc -l)",
+      "Read(//tmp/**)"
     ]
   }
 }
