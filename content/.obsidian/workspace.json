@@ -11,10 +11,14 @@
             "id": "224cf476c7b474e6",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "blog/en/03-Deploying-an-infrastructure-for-a-macos-app-distribution.mdx",
+                "mode": "source",
+                "source": true
+              },
               "icon": "lucide-file",
-              "title": "Nouvel onglet"
+              "title": "03-Deploying-an-infrastructure-for-a-macos-app-distribution"
             }
           }
         ]
