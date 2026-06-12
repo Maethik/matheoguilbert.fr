@@ -218,7 +218,7 @@ export default async function ArticlePage({ params }: props) {
                         [&_a]:text-brand-brown [&_a]:underline 
                         [&_ul]:font-sans [&_ul]:text-sm [&_ul]:text-brand-brown/70 [&_ul]:leading-[1.9] [&_ul]:list-disc [&_ul]:pl-5 [&_ul]:space-y-1
                         [&_li]:font-sans [&_li]:text-sm [&_li]:text-brand-brown/70 [&_li]:leading-[1.9]
-                        [&_pre]:bg-brand-brown [&_pre]:text-brand-beige [&_pre]:rounded-lg [&_pre]:p-4 [&_pre]:overflow-x-auto [&_pre]:text-xs [&_pre]:leading-relaxed
+                        [&_pre]:bg-brand-brown/5 [&_pre]:border [&_pre]:border-brand-brown/10 [&_pre]:text-brand-brown [&_pre]:rounded-lg [&_pre]:p-4 [&_pre]:overflow-x-auto [&_pre]:text-xs [&_pre]:leading-relaxed
                         [&_pre_code]:font-mono [&_pre_code]:bg-transparent [&_pre_code]:p-0
                         [&_code]:font-mono [&_code]:text-xs [&_code]:bg-brand-brown/10 [&_code]:text-brand-brown [&_code]:rounded [&_code]:px-1.5 [&_code]:py-0.5
                     "
