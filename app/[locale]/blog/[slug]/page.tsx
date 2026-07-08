@@ -2,9 +2,10 @@ import React from "react";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { MDXRemote } from "next-mdx-remote/rsc";
-import { getArticleBySlug, getAllArticles, getAlternatesArticle } from "@/lib/blog/get-articles";
+import { getArticleBySlug, getAllArticles, getAlternatesArticle, getRandomOtherArticles } from "@/lib/blog/get-articles";
 import { ArticleHero } from "@/app/[locale]/blog/[slug]/_components/ArticleHero";
 import { ArticleSummary } from "@/app/[locale]/blog/[slug]/_components/ArticleSummary";
+import { OtherArticles } from "@/app/[locale]/blog/[slug]/_components/OtherArticles";
 import { locales } from "@/middleware";
 import Link from "next/link";
 import { MermaidDiagram } from "@/components/mdx/MermaidDiagram";
@@ -144,6 +145,13 @@ export default async function ArticlePage({ params }: props) {
 
     const articleUrl = `${siteUrl}/${locale}/blog/${slug}`;
 
+    const otherArticles = getRandomOtherArticles(locale, slug, 2).map((item) => ({
+        slug: item.slug,
+        title: item.title,
+        description: item.description,
+        cover: item.cover,
+    }));
+
     const imageUrl = article.cover
         ? article.cover.startsWith("http")
             ? article.cover
@@ -229,6 +237,8 @@ export default async function ArticlePage({ params }: props) {
                         components={mdxComponents}
                     />
                 </article>
+
+                <OtherArticles locale={locale} articles={otherArticles} />
             </div>
         </main>
     );

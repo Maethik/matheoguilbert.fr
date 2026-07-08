@@ -45,6 +45,17 @@ export function getAllArticles(locale: string): Article[] {
         .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 }
 
+export function getRandomOtherArticles(locale: string, excludeSlug: string, count: number): Article[] {
+    const candidates = getAllArticles(locale).filter((article) => article.slug !== excludeSlug);
+
+    for (let i = candidates.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [candidates[i], candidates[j]] = [candidates[j], candidates[i]];
+    }
+
+    return candidates.slice(0, count);
+}
+
 export function getAlternatesArticle(article: Article) {
     if (!article.translationKey) {
         return {};

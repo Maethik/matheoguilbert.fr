@@ -82,6 +82,10 @@
         "noArticles": "No articles yet.",
         "summary": {
             "label": "Summary"
+        },
+        "otherArticles": {
+            "sectionLabel": "Other articles",
+            "title": "See also"
         }
     },
     "projectPage": {

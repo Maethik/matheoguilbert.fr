@@ -6,7 +6,7 @@ import { useTranslations } from "next-intl";
 
 type props = {
     locale: string;
-    projects: {
+    articles: {
         slug: string;
         title: string;
         description: string;
@@ -14,9 +14,9 @@ type props = {
     }[];
 };
 
-export function OtherProjects({ locale, projects }: props) {
+export function OtherArticles({ locale, articles }: props) {
     const ref = useRef<HTMLElement>(null);
-    const t = useTranslations('projectPage.otherProjects');
+    const t = useTranslations('blogPage.otherArticles');
 
     useEffect(() => {
         const el = ref.current;
@@ -36,7 +36,7 @@ export function OtherProjects({ locale, projects }: props) {
         return () => observer.disconnect();
     }, []);
 
-    if (!projects.length) return null;
+    if (!articles.length) return null;
 
     return (
         <section ref={ref} className="pt-6 pb-20">
@@ -56,19 +56,19 @@ export function OtherProjects({ locale, projects }: props) {
             </h2>
 
             <div className="grid gap-6 md:grid-cols-2">
-                {projects.map((project, i) => (
+                {articles.map((article, i) => (
                     <Link
-                        key={project.slug}
-                        href={`/${locale}/works/${project.slug}`}
+                        key={article.slug}
+                        href={`/${locale}/blog/${article.slug}`}
                         className="reveal group block cursor-pointer"
                         style={{ transitionDelay: `${i * 100}ms` }}
                     >
                         {/* Image */}
                         <div className="w-full h-[240px] rounded-xl overflow-hidden bg-brand-brown/5 mb-5">
-                            {project.cover && (
+                            {article.cover && (
                                 <img
-                                    src={project.cover}
-                                    alt={project.title}
+                                    src={article.cover}
+                                    alt={article.title}
                                     className="w-full h-full object-cover transition-all duration-700 group-hover:scale-[1.04] group-hover:brightness-105"
                                 />
                             )}
@@ -78,10 +78,10 @@ export function OtherProjects({ locale, projects }: props) {
                         <div className="flex items-start justify-between gap-4">
                             <div>
                                 <h3 className="font-serif text-2xl text-brand-brown uppercase mb-1.5">
-                                    {project.title}
+                                    {article.title}
                                 </h3>
                                 <p className="font-sans text-sm text-brand-brown/55 leading-relaxed">
-                                    {project.description}
+                                    {article.description}
                                 </p>
                             </div>
                             <svg
