@@ -42,3 +42,16 @@ export function getAllProjects(locale: string): Project[] {
         .filter((project): project is Project => project !== null)
         .sort((a, b) => a.priority - b.priority);
 }
+
+export function getRandomOtherProjects(locale: string, excludeSlug: string, count: number): Project[] {
+    const candidates = getAllProjects(locale).filter(
+        (project) => project.slug !== excludeSlug && project.ready
+    );
+
+    for (let i = candidates.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [candidates[i], candidates[j]] = [candidates[j], candidates[i]];
+    }
+
+    return candidates.slice(0, count);
+}

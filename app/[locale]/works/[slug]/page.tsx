@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import { MDXRemote } from "next-mdx-remote/rsc";
-import { getAllProjects, getProjectBySlug, getProjectSlugs } from "@/lib/projects/get-projects";
+import { getProjectBySlug, getProjectSlugs, getRandomOtherProjects } from "@/lib/projects/get-projects";
 import { mdxComponents } from "@/components/mdx/mdxComponents";
 import { ProjectHero } from "@/app/[locale]/works/_components/ProjectHero";
 import { ProjectMeta } from "@/app/[locale]/works/_components/ProjectMeta";
@@ -38,15 +38,12 @@ export default async function ProjectPage({ params }: props) {
         notFound();
     }
 
-    const otherProjects = getAllProjects(locale)
-        .filter((item: any) => item.slug !== slug && item.ready)
-        .slice(0, 2)
-        .map((item: any) => ({
-            slug: item.slug,
-            title: item.title,
-            description: item.description,
-            cover: item.cover,
-        }));
+    const otherProjects = getRandomOtherProjects(locale, slug, 2).map((item) => ({
+        slug: item.slug,
+        title: item.title,
+        description: item.description,
+        cover: item.cover,
+    }));
 
     return (
         <main className="bg-brand-beige">
